@@ -1,0 +1,99 @@
+
+.social-media-generator {
+    min-height: 600px;
+    color: white; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    padding: 2em;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.title {
+    color: white; 
+    font-size: 24px; 
+    text-align: center; 
+    margin: 20px 0; 
+    font-weight: 700;
+    font-size: 32px;
+}
+.description-block {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    max-width:800px;
+    margin:auto;
+    margin-top:20px;
+}
+
+.icon-container {
+    display:flex;
+    justify-content:center;
+}
+
+.icon-container svg {
+    height: 65px; 
+    width: 65px;
+    margin: 20px;
+    cursor: pointer;
+    border: 1px solid transparent; 
+    background: linear-gradient(to right, #ff7f50, #ff4500) padding-box,
+                transparent border-box; 
+    border-radius: 50%; 
+    transition: transform 0.3s, border 0.3s;
+    padding:10px;
+}
+
+.icon-container svg:hover {
+    transform: scale(0.9); 
+    border: 1px solid transparent; 
+    background: linear-gradient(to right, #ff7f50, #ff4500) padding-box, 
+    transparent border-box; 
+}
+
+.passive {
+    opacity: 0.3; 
+}
+
+.to-blue-700 {
+    --tw-gradient-to: transparent;
+}
+
+.from-blue-500 {
+    --tw-gradient-from: transparent;
+    --tw-gradient-to: rgb(59 130 246 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+/*Above 768px*/
+@media only screen and (min-width:768px) {
+    .navigation-list {
+        display:flex;
+    }
+}
+
+/*Below 768px*/
+@media only screen and (max-width: 768px) {
+    .icon-container svg {
+        height: 60px; 
+        width: 60px;
+        margin: 2px;
+        cursor: pointer;
+        border: 1px solid transparent; 
+        background: linear-gradient(to right, #ff7f50, #ff4500) padding-box,
+                    transparent border-box; 
+        border-radius: 50%; 
+        transition: transform 0.3s, border 0.3s;
+        padding:10px;
+    }
+}
+
+
+
+

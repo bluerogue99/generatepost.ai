@@ -1,0 +1,28 @@
+@media (prefers-color-scheme: dark) {
+    .dark\:border-indigo-600 {
+        --tw-border-opacity: 1;
+        border-color: #ff4500 !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark\:border-indigo-600 {
+        --tw-border-opacity: 1;
+        border-color: #ff4500 !important;
+        font-size: 16px;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .dark\:bg-indigo-900\/50 {
+        background-color: rgba(255, 69, 0, 0.5);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .dark\:text-indigo-300 {
+        --tw-text-opacity: 1;
+        color: white;
+    }
+}
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    font-size: 16px;
+}

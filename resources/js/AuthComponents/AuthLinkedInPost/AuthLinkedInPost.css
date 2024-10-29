@@ -1,0 +1,128 @@
+.linkedin-post {
+    width: 100%;
+    margin: 0 auto;
+    max-width:800px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .linkedin-header, .linkedin-content, .linkedin-image-container, .linkedin-social, .linkedin-interact {
+    padding: 16px;
+  }
+  
+  .linkedin-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .linkedin-profile-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 2px;
+    margin-right: 10px;
+  }
+  
+  .linkedin-profile-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .linkedin-brand {
+    color:black;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .linkedin-followed-count {
+    font-size: 13px;
+    color: #888;
+  }
+  
+  .linkedin-promoted-tag {
+    font-size: 12px;
+    color: #000000;
+  }
+  
+  .linkedin-dots {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+  }
+  
+  .linkedin-post-text {
+    font-size:16px;
+    color: black;
+  }
+  
+  .linkedin-image-container {
+    text-align: center;
+  }
+  .linkedin-image-container-inner {
+    border: 1px solid #D3D3D3; /* Light gray border */
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft drop shadow */
+  }
+  
+  .linkedin-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .linkedin-post-title {
+    color:black;
+    font-size: 16px;
+    margin-top: 8px;
+    padding: 10px 20px;
+  }
+  
+  .linkedin-social {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .linkedin-social-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .linkedin-social-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .linkedin-divider {
+    border-top: 1px solid #adabaa;
+    margin: 0;
+  }
+  
+  .linkedin-interact {
+    display: flex;
+    color:#6A6A6A;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px 0;
+  }
+  .d-flex {
+    display:flex;
+  }
+  .linkedin-interact > div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+  
+  .linkedin-like-icon, .linkedin-comment-icon, .linkedin-share-icon, .linkedin-send-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .linkedin-post-text {
+    text-align:left;
+  }

@@ -17,9 +17,18 @@ Route::get('/', function () {
     ]);
 });
 
+
+/*Auth Layout Routes*/
+Route::get('/generate', function () {
+    return Inertia::render('Generate');
+})->middleware(['auth', 'verified'])->name('generate');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/analytics', function () {
+    return Inertia::render('Analytics');
+})->middleware(['auth', 'verified'])->name('analytics');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -27,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+/*Public Layout Routes*/
 Route::post('/api/generate-post', [PostGeneratorController::class, 'generatePost']);
 Route::post('/api/generate-headline', [HeadlineGeneratorController::class, 'generateHeadline']);
 Route::post('/api/generate-image', [ImageGeneratorController::class, 'generateImage']);

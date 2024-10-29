@@ -1,0 +1,235 @@
+.facebook-post-header-container {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.facebook-post-image-container {
+    margin: 16px 0;
+}
+
+.facebook-post-cta-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top: 16px;
+    text-align: center;
+    background-color:#F2F3F5; 
+    padding:18px;
+}
+.facebook-website-name {
+    color:#606770;
+    text-transform:uppercase;
+    text-align:left;
+}
+
+.facebook-headline {
+    text-align: left;
+    
+    padding-right:20px;
+    font-family: 'Roboto';
+    display:flex;
+    color:#1D2129;
+    font-size:1.4em;
+    font-weight:600;
+}
+.facebook-cta-button {
+    font-weight: 700;
+    font-size: 1em;
+    border: 1px solid #4B4F56;
+    border-radius: 4px;
+    padding: 0px 14px;
+    min-width: 120px;
+    height: 40px;
+    background: black;
+    color: white;
+}
+.facebook-post-reaction-container {
+    margin-top: 16px;
+    color: gray;
+}
+
+.facebook-post-action-container {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+}
+.facebook-headline-container {
+    display:block;
+}
+
+.d-flex {
+    display:flex; 
+}
+.earth-icon {
+    width: 14px;
+    height: 14px;
+    margin:3.5px;
+}
+
+.facebook-post {
+    max-width: 800px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 16px;
+    margin: 0px auto;
+    font-family: Arial, sans-serif;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.profile-name {
+    font-family: Roboto;
+    color: #395996;
+    font-size:1em;
+    font-weight: bold;
+}
+
+.sponsored {
+    font-family:Roboto; 
+    font-size: 0.85em;
+    color: gray;
+}
+
+.menu-icon {
+    cursor: pointer;
+    color: #999;
+}
+
+.post-title {
+    font-family: Roboto;
+    color: #395996;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 16px 0;
+}
+
+.post-image img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.post-content {
+    font-family: Roboto;
+    color: #1D2129; 
+    margin-top: 16px;
+    font-size: 1em;
+    text-align:left;
+}
+
+.cta-button {
+    background-color: #4267B2;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.post-reactions {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    font-size: 0.85em;
+    margin-top: 16px;
+    color: gray;
+}
+.facebook-reaction-icon {
+    height:32px;
+    width:32px;
+}
+.facebook-comment {
+    color:#606770; 
+    font-family: Roboto; 
+    font-size: 16px;
+}
+.facebook-share {
+    margin-left:10px;
+    color:#606770;
+    font-family: Roboto; 
+    font-size: 16px;
+}
+.facebook-heart-count {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 4px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 8px;
+    gap:20px;
+    width:100%;
+}
+.action-text {
+    color: #606770; 
+    margin-top:2px;
+}
+.action-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+.facebook-footer-icon {
+    height:28px;
+    width:28px;
+}
+.facebook-action-button {
+    background: none;
+    border: none;
+    color: #4267B2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.facebook-comment-profile {
+    width: 30px;
+}
+.facebook-chevron-icon {
+    width:14px;
+    height:10px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.footer-profile .profile-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.anchor-icon {
+    color: #999;
+}
+
+

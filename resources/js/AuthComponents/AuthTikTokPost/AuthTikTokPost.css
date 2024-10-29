@@ -1,0 +1,198 @@
+.tiktok-post {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #000;
+  }
+  
+  .tiktok-header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 16px;
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    margin-top: 30px;
+  }
+  
+  .header-option {
+    color: #aaa;
+    cursor: pointer;
+  }
+  
+  .header-option.active {
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+  }
+  
+  /* TikTok Container with Background Image */
+  .tiktok-container {
+    position:relative;
+    min-height:600px;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    color: #fff;
+  }
+  
+  .tiktok-left-content {
+    position:absolute; 
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.5) 85%, rgba(0, 0, 0, 0.3) 95%, rgba(0, 0, 0, 0) 100%);
+    bottom:0; 
+    left:0; 
+    padding:20px;
+  }
+  .tiktok-right-content {
+    position:absolute; 
+    bottom:0; 
+    right:0; 
+    padding:20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .tiktok-share, .tiktok-comment, .tiktok-heart, .tiktok-profile {
+    display:flex; 
+    flex-direction:column;
+    gap: 4px;
+  }
+  .tiktok-profile {
+    position:relative;
+  }
+  .tiktok-bck {
+    min-height:600px;
+  }
+  
+  .tiktok-profile-plus {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 18px;
+    width: 18px;
+    background: red;
+    border-radius: 50px;
+    padding: 3px; /* Add padding */
+    margin-right: 12px;
+    box-sizing: content-box; /* Ensures padding doesn’t alter the icon's size */
+  }
+  
+  
+  .tiktok-music-disc-inner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 20px;
+    margin-right: 17.5px;
+    margin-bottom: 38px;
+  }
+  
+  
+  .tiktok-user-info {
+    margin-bottom: 10px; 
+    display:flex; 
+    flex-direction: column;
+    margin-right:50px;
+  }
+  
+  .tiktok-name {
+    font-weight: bold;
+    text-align: justify;
+    margin-top:10px;
+  }
+  
+  .tiktok-post-content {
+    color: white; 
+    text-align:left;
+    font-size: 14px;
+  }
+  
+  .tiktok-music-data {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .tiktok-music-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .tiktok-music-title {
+    font-size: 14px;
+  }
+  
+  .tiktok-music-disc {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    animation: spin 4s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .tiktok-share, .tiktok-comment, .tiktok-heart, .tiktok-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 0px;
+  }
+  
+  .tiktok-share-text, .tiktok-comment-count, .tiktok-heart-count {
+    font-size: 14px;
+  }
+  
+  .tiktok-navigation {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #181818;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaa;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .nav-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+  
+  .tiktok-footer {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .tiktok-footer img {
+    height: auto;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .tiktok-post-headline {
+    text-align:left;
+    font-weight:600; 
+    margin-bottom:10px;
+  }
+  
+  .show-more-button {
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: 14px;
+    margin-bottom:10px;
+  }

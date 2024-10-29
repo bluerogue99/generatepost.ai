@@ -1,0 +1,138 @@
+.x-post {
+  width: 100%;
+  max-width:800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  overflow: hidden;
+  color:#000000;
+  border-radius:25px;
+}
+
+.x-header, .x-post-content, .x-post-data {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+.x-share {
+  padding:20px;
+}
+
+.x-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.x-user {
+  flex-grow: 1;
+}
+
+.d-flex {
+  display:flex;
+}
+.x-profile-name-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.x-profile-name {
+  font-weight: bold;
+  font-size: 16px;
+  color:black;
+  font-weight:400;
+}
+
+.x-verified-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.x-username {
+  font-size: 14px;
+  color: #555;
+}
+
+.x-plan {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.x-subscribe-button {
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50px;
+  padding: 4px 18px;
+  line-height: 1.6;
+  border: none;
+  cursor: pointer;
+}
+
+.x-dot-icon {
+  width: 18px;
+}
+
+.x-post-content {
+  font-size: 15px;
+  color: #333;
+}
+
+.x-image img {
+  width: 100%;
+  height: auto;
+}
+.x-image {
+  padding:20px;
+}
+
+.x-post-data {
+  font-size: 13px;
+  color: black;
+  display: flex;
+  gap: 8px;
+}
+
+.x-share {
+  display: flex;
+  justify-content: space-between;
+}
+
+.x-share > div {
+  display: flex;
+  align-items: center;
+}
+
+.x-comment-count, .x-share-count, .x-heart-count, .x-mark-count {
+  margin-left:4px;
+}
+.x-share-up-icon, .x-share-down-icon {
+  width:10px;
+}
+.x-share-icon-container {
+  display:flex; 
+  flex-direction:row-reverse;
+}
+
+
+.x-share .x-comment-icon,
+.x-share .x-heart-icon,
+.x-share .x-mark-icon,
+.x-share .x-upload-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.x-post-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.x-post-title {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}

@@ -1,0 +1,139 @@
+.instagram-post {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #262626;
+    background-color:white;
+  }
+  
+  .insta-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  .insta-interaction {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    justify-content: space-between;
+  }
+  .insta-share {
+    display:flex; 
+    justify-content:space-between;
+    padding:20px;
+  }
+  .insta-share-icon-container {
+    display:flex; 
+    justify-content:space-between;
+    align-items:center;
+  }
+  .insta-share-icon-container, .insta-pin-icon-container {
+    min-width:110px;
+  }
+  .insta-pin-icon-container {
+    display:flex; 
+    justify-content:flex-end;
+  }
+  .insta-dots_active {
+    width:8px;
+    margin-right:2px;
+  }
+  .insta-dots_passive {
+    width:8px;
+    margin-left:2px;
+  }
+.profile-name-top {
+    margin-left:5px;
+}
+  .insta-profile-container {
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center;
+  }
+  
+  .profile-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+  .profile-name {
+    font-weight: bold;
+  }
+  
+  .dots-icon, .insta-dots {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .post-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .insta-share-icon-container img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .insta-pin-icon-container img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+ 
+  
+  .insta-likes, .insta-date {
+    padding: 0px 20px;
+    font-size: 14px;
+    font-weight:700;
+  }
+  .insta-date {
+    color:#949494;
+    font-family:Roboto; 
+    font-weight:300;
+  }
+  .view-translation {
+    color:#000000;
+  }
+  
+  .insta-title, .insta-content {
+    padding: 10px 20px;
+  }
+  .insta-content {
+    display:flex; 
+    justify-content:space-between;
+  }
+  .heart-icon-empty {
+    margin-top:8px;
+    margin-right:1.8px;
+  }
+  
+  .insta-title .profile-name, .insta-title .insta-post-title {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .insta-footer-interact-icon {
+    width:30px; 
+    height:30px;
+  }
+
+
+
+  .insta-dots-icon-container {
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center;
+  }
+  .insta-post-content, .insta-post-title, .profile-name {
+    text-align:left;
+  }
+  .insta-post-title {
+    font-weight:600;
+  }
+  .profile-name {
+    width:100%;
+  }

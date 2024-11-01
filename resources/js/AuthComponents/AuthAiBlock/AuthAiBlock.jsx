@@ -22,11 +22,11 @@ const buttonTexts = {
 
 const SocialMediaGenerator = () => {
     const [selectedPlatform, setSelectedPlatform] = useState('Facebook');
-    const [buttonText, setButtonText] = useState(buttonTexts.Facebook); // Initialize button text
+    const [buttonText, setButtonText] = useState(buttonTexts.Facebook);
 
     const handleIconClick = (platform) => {
         setSelectedPlatform(platform);
-        setButtonText(buttonTexts[platform]); // Update button text based on selected platform
+        setButtonText(buttonTexts[platform]); 
     };
     
     return (
@@ -54,13 +54,16 @@ const SocialMediaGenerator = () => {
                         className={selectedPlatform === 'LinkedIn' ? 'active' : 'passive'} 
                     />
                     
-                    {/* Add Threads icon if you have an icon for it */}
                 </div>
-                <h2 className="title">{selectedPlatform} Post Generator</h2> {/* Dynamic title */}
+                    <h2 className="title">{selectedPlatform} Post Generator</h2>
+                    <div className="premium-inner-container">
+                        <img height="30px" width="30px" src="assets/premium.png" className="premium-icon"/>
+                        <span className="premium-tag">Premium</span>
+                    </div>
                 <div className="description-block">
                     {descriptions[selectedPlatform]}
                 </div>
-                <AuthAiForm buttonText={buttonText} selectedPlatform={selectedPlatform} /> {/* Pass button text to AiForm */}
+                <AuthAiForm buttonText={buttonText} selectedPlatform={selectedPlatform} /> 
             </div>
         </div>
     );

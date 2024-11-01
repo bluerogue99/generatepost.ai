@@ -5,6 +5,7 @@ import AuthInstagramPost from '../AuthInstagramPost/AuthInstagramPost';
 import AuthTikTokPost from '../AuthTikTokPost/AuthTikTokPost';
 import AuthXPost from '../AuthXPost/AuthXPost';
 import AuthLinkedInPost from '../AuthLinkedInPost/AuthLinkedinPost';
+import { usePage } from '@inertiajs/react';
 
 const toneOptions = [
     { label: 'Casual 😊', value: 'casual' },
@@ -22,6 +23,8 @@ const toneOptions = [
 ];
 
 const AiForm = ({ buttonText, selectedPlatform }) => {
+    const { props } = usePage();
+    const currentUser = props.auth.user;
     const [postTopic, setPostTopic] = useState('');
     const [imagePrompt, setImagePrompt] = useState('');
     const [toneOfVoice, setToneOfVoice] = useState('');
@@ -32,6 +35,11 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
     const [loading, setLoading] = useState(false); 
     const [isPostGenerated, setIsPostGenerated] = useState(false); 
     const [isImageGenerated, setIsImageGenerated] = useState(false);
+    const [isPostSaved, setIsPostSaved] = useState(false);
+
+
+
+
 
     useEffect(() => {
         setIsPostGenerated(false);
@@ -190,7 +198,7 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
         try {
 
             // Generate headline
-            const headlineResponse = await fetch('/api/generate-headline', {
+            const headlineResponse = await fetch('/api/generate-authenticated-headline', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -208,7 +216,7 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
 
 
             // Generate post
-            const postResponse = await fetch('/api/generate-post', {
+            const postResponse = await fetch('/api/generate-authenticated-post', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -222,7 +230,7 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                 setGeneratedPost(postData.post); 
                 setIsPostGenerated(true);
                 // Now generate the image
-                const imageResponse = await fetch('/api/generate-image', {
+                const imageResponse = await fetch('/api/generate-authenticated-image', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -248,6 +256,47 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
             setLoading(false);
         }
     };
+
+
+
+    const handleSavePost = async () => {
+        try {
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            const response = await fetch('/api/posts', { // Ensure this matches your route
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken,
+                },
+                body: JSON.stringify({
+                    post_created_by: currentUser ? currentUser.id : null, 
+                    post_content: generatedPost,
+                    post_image_url: generatedImageUrl,
+                    post_headline: generatedHeadline,
+                    post_status: "draft",
+                    post_topic_entered: postTopic, // New field
+                    image_prompt_entered: imagePrompt, // New field
+                    platform_selected: selectedPlatform, // New field from props
+                    tone_selected: toneOfVoice, // New field
+                }),
+            });
+    
+            if (response.ok) {
+                setIsPostSaved(true);
+                alert("Post saved successfully!");
+                // Optionally reset fields or perform other actions
+            } else {
+                const errorResponse = await response.json();
+                console.error("Error details:", errorResponse);
+                setErrorMessage("Failed to save post: " + (errorResponse.message || "Unknown error"));
+            }
+        } catch (error) {
+            console.error("An error occurred:", error);
+            setErrorMessage("An error occurred while saving the post.");
+        }
+    };
+    
+    
 
     return (
         <div className="form-container">
@@ -335,6 +384,15 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                     />
                 )}
             </div>
+
+            {/* Save post to db button */}
+            {isPostGenerated && isImageGenerated && (
+                <div className="save-post-container">
+                    <button onClick={handleSavePost} className="save-button">
+                        Save
+                    </button>
+                </div>  
+            )}
         </div>
     );
 };

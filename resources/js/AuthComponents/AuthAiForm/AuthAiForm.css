@@ -106,3 +106,9 @@ select:focus {
     display: none; 
 }
 
+@media only screen and (max-width:768px) {
+    .premium-inner-container {
+        display:none;
+    }
+}
+

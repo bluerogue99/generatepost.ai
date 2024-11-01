@@ -96,13 +96,54 @@ select:focus {
     border-color: #ff7f50; 
 }
 
-
-
 .generated-active {
     display: block; 
 }
 
 .generated-passive {
     display: none; 
+}
+
+.task-button-group {
+    display:flex; 
+    justify-content:space-between; 
+    padding-top: 20px;
+}
+.task-button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ff7f50, #ff4500);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.open-image-button {
+    margin-left:10px;
+}
+.copy-content-button {
+    margin-right:10px;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .task-button {
+        min-width:100%;
+    }
+    .task-button-group {
+        display:block;
+    }
+    .copy-title-button {
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .copy-content-button, .open-image-button {
+        margin-right:0;
+        margin-left:0;  
+    }
 }
 

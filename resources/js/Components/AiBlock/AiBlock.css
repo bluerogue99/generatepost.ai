@@ -87,6 +87,11 @@
     }
 }
 
-
+@media only screen and (max-width:600px) {
+    .social-media-generator {
+        padding:0; 
+        display:block;
+    }
+}
 
 

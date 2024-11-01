@@ -5,6 +5,9 @@ import InstagramPost from '../InstagramPost/InstagramPost';
 import TikTokPost from '../TikTokPost/TikTokPost';
 import XPost from '../XPost/XPost';
 import LinkedInPost from '../LinkedInPost/LinkedinPost';
+import { FaClipboard, FaExternalLinkAlt } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const toneOptions = [
     { label: 'Casual 😊', value: 'casual' },
@@ -32,6 +35,37 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
     const [loading, setLoading] = useState(false); 
     const [isPostGenerated, setIsPostGenerated] = useState(false); 
     const [isImageGenerated, setIsImageGenerated] = useState(false);
+
+
+
+    const copyHeadlineToClipboard = () => {
+        navigator.clipboard.writeText(generatedHeadline).then(() => {
+            toast.success("Headline copied to clipboard!", {
+                autoClose: 3000, 
+            });
+        }).catch(err => {
+            toast.error("Failed to copy content.");
+        });
+    };
+
+    const copyContentToClipboard = () => {
+        navigator.clipboard.writeText(generatedPost).then(() => {
+            toast.success("Post content copied to clipboard!", {
+                autoClose: 3000, 
+            });
+        }).catch(err => {
+            toast.error("Failed to copy content.");
+        });
+    };
+
+    const openImageInNewTab = () => {
+        if (generatedImageUrl) {
+            window.open(generatedImageUrl, '_blank');
+        } else {
+            toast.error("No image available to open.");
+        }
+    };
+    
 
     useEffect(() => {
         setIsPostGenerated(false);
@@ -262,7 +296,7 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
             <h2 className="form-label">Enter Image Prompt</h2>
             <input
                 type="text"
-                placeholder="business woman holding an apple"
+                placeholder="Visualize an upcoming event with exciting graphics, a countdown, and highlights of key details like date and location."
                 value={imagePrompt}
                 onChange={(e) => setImagePrompt(e.target.value)} // Correctly set imagePrompt
                 className="post-topic-input"
@@ -333,6 +367,24 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                     generatedImageUrl={generatedImageUrl}
                     generatedHeadline={generatedHeadline}
                     />
+                )}
+
+                {isPostGenerated && isImageGenerated && (
+                <div className="task-button-group">
+                    <button onClick={copyContentToClipboard} className="task-button copy-content-button">
+                        <FaClipboard />
+                        <span>Copy Content</span>
+                    </button>
+                    <button onClick={copyHeadlineToClipboard} className="task-button copy-title-button">
+                        <FaClipboard />
+                        <span>Copy Title</span>
+                    </button>
+                    <button onClick={openImageInNewTab} className="task-button open-image-button">
+                        <FaExternalLinkAlt />
+                        <span>Open image in new tab</span>
+                    </button>
+                    <ToastContainer />
+                </div>  
                 )}
             </div>
         </div>

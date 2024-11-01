@@ -1,5 +1,6 @@
 
 .social-media-generator {
+    position:relative;
     min-height: 600px;
     color: white; 
     display: flex; 
@@ -18,7 +19,7 @@
     color: white; 
     font-size: 24px; 
     text-align: center; 
-    margin: 20px 0; 
+    margin: 20px 0px 0px 0px;
     font-weight: 700;
     font-size: 32px;
 }
@@ -70,6 +71,23 @@
     --tw-gradient-to: rgb(59 130 246 / 0) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+
+.premium-inner-container {
+    display:flex; 
+    flex-direction:column; 
+    align-items:center;
+    justify-content: center;
+    position:absolute; 
+    right:0; 
+    top:0; 
+}
+
+.premium-tag {
+    margin-top:2px;
+}
+
+
+
 
 /*Above 768px*/
 @media only screen and (min-width:768px) {

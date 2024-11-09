@@ -6,6 +6,8 @@ import AuthTikTokPost from '../AuthTikTokPost/AuthTikTokPost';
 import AuthXPost from '../AuthXPost/AuthXPost';
 import AuthLinkedInPost from '../AuthLinkedInPost/AuthLinkedinPost';
 import { usePage } from '@inertiajs/react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const toneOptions = [
     { label: 'Casual 😊', value: 'casual' },
@@ -283,12 +285,11 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
     
             if (response.ok) {
                 setIsPostSaved(true);
-                alert("Post saved successfully!");
-                // Optionally reset fields or perform other actions
+                toast.success("Post saved!");
             } else {
                 const errorResponse = await response.json();
-                console.error("Error details:", errorResponse);
                 setErrorMessage("Failed to save post: " + (errorResponse.message || "Unknown error"));
+                toast.error("Failed to save post: " + (errorResponse.message || "Unknown error")); 
             }
         } catch (error) {
             console.error("An error occurred:", error);
@@ -393,6 +394,7 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                     </button>
                 </div>  
             )}
+            <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
         </div>
     );
 };

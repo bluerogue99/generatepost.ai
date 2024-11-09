@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaTiktok } from 'react-icons/fa';
 import './AiBlock.css'; 
 import AiForm from '../AiForm/AiForm';
@@ -20,47 +20,49 @@ const buttonTexts = {
     LinkedIn: "Create LinkedIn Post",
 };
 
-const SocialMediaGenerator = () => {
+const SocialMediaGenerator = ({ selectedPlatformFromMenu, setSelectedPlatformFromMenu }) => {
     const [selectedPlatform, setSelectedPlatform] = useState('Facebook');
-    const [buttonText, setButtonText] = useState(buttonTexts.Facebook); // Initialize button text
+    const [buttonText, setButtonText] = useState(buttonTexts.Facebook);
+
+    useEffect(() => {
+        // Update selectedPlatform and buttonText whenever selectedPlatformFromMenu changes
+        if (selectedPlatformFromMenu && selectedPlatformFromMenu !== selectedPlatform) {
+            setSelectedPlatform(selectedPlatformFromMenu);
+            setButtonText(buttonTexts[selectedPlatformFromMenu]);
+        }
+    }, [selectedPlatformFromMenu, selectedPlatform]);
 
     const handleIconClick = (platform) => {
         setSelectedPlatform(platform);
-        setButtonText(buttonTexts[platform]); // Update button text based on selected platform
+        setSelectedPlatformFromMenu(platform); // Update the menu platform selection
+        setButtonText(buttonTexts[platform]);
     };
-    
+
+    const platformIcons = [
+        { name: 'Facebook', icon: FaFacebook },
+        { name: 'Instagram', icon: FaInstagram },
+        { name: 'TikTok', icon: FaTiktok },
+        { name: 'X', icon: FaTwitter },
+        { name: 'LinkedIn', icon: FaLinkedin },
+    ];
+
     return (
-        <div className="social-media-generator">
+        <div className="social-media-generator" id="postgenerator">
             <div className="wrapper">
                 <div className="icon-container">
-                    <FaFacebook 
-                        onClick={() => handleIconClick('Facebook')} 
-                        className={selectedPlatform === 'Facebook' ? 'active' : 'passive'} 
-                    />
-                    <FaInstagram 
-                        onClick={() => handleIconClick('Instagram')} 
-                        className={selectedPlatform === 'Instagram' ? 'active' : 'passive'} 
-                    />
-                    <FaTiktok 
-                        onClick={() => handleIconClick('TikTok')} 
-                        className={selectedPlatform === 'TikTok' ? 'active' : 'passive'} 
-                    />
-                    <FaTwitter 
-                        onClick={() => handleIconClick('X')} 
-                        className={selectedPlatform === 'X' ? 'active' : 'passive'} 
-                    />
-                    <FaLinkedin 
-                        onClick={() => handleIconClick('LinkedIn')} 
-                        className={selectedPlatform === 'LinkedIn' ? 'active' : 'passive'} 
-                    />
-                    
-                    {/* Add Threads icon if you have an icon for it */}
+                    {platformIcons.map(({ name, icon: Icon }) => (
+                        <Icon
+                            key={name}
+                            onClick={() => handleIconClick(name)}
+                            className={selectedPlatform === name ? 'active' : 'passive'}
+                        />
+                    ))}
                 </div>
-                <h2 className="title">{selectedPlatform} Post Generator</h2> {/* Dynamic title */}
+                <h2 className="title">{selectedPlatform} Post Generator</h2>
                 <div className="description-block">
                     {descriptions[selectedPlatform]}
                 </div>
-                <AiForm buttonText={buttonText} selectedPlatform={selectedPlatform} /> {/* Pass button text to AiForm */}
+                <AiForm buttonText={buttonText} selectedPlatform={selectedPlatform} />
             </div>
         </div>
     );

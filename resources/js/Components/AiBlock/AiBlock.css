@@ -6,7 +6,7 @@
     display: flex; 
     justify-content: center;
     align-items: center; 
-    padding: 2em;
+    padding: 6em 2em;
     text-align: center;
 }
 
@@ -16,12 +16,15 @@
     flex-direction: column;
 }
 .title {
-    color: white; 
-    font-size: 24px; 
-    text-align: center; 
-    margin: 20px 0; 
+    font-family: Inter, sans-serif;
+    font-size: 3.2rem;
+    text-align: left;
+    line-height: normal;
     font-weight: 700;
-    font-size: 32px;
+    color: white;
+    text-align:center;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 .description-block {
     color: #fff;
@@ -74,8 +77,8 @@
 /*Below 768px*/
 @media only screen and (max-width: 768px) {
     .icon-container svg {
-        height: 60px; 
-        width: 60px;
+        height: 50px; 
+        width: 50px;
         margin: 2px;
         cursor: pointer;
         border: 1px solid transparent; 
@@ -85,6 +88,17 @@
         transition: transform 0.3s, border 0.3s;
         padding:10px;
     }
+    .wrapper {
+        padding:2em;
+    }
+    .description-block {
+        font-size: 1rem;
+        color: #A8ACB7;
+    }
+    .title {
+        font-size:2rem;
+        padding-top:1em;
+    }
 }
 
 @media only screen and (max-width:600px) {
@@ -93,5 +107,3 @@
         display:block;
     }
 }
-
-

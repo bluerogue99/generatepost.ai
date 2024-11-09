@@ -8,7 +8,6 @@ import LinkedInPost from '../LinkedInPost/LinkedinPost';
 import { FaClipboard, FaExternalLinkAlt } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 const toneOptions = [
     { label: 'Casual 😊', value: 'casual' },
     { label: 'Professional 👔', value: 'professional' },

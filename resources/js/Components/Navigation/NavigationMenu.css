@@ -1,32 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 .navigation-menu {
     display: flex;
-    justify-content: space-between; /* Space between logo and menu */
-    align-items: center; /* Center items vertically */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.9)); /* Darker black gradient */
-    padding: 10px 20px; /* Adjust padding */
-    box-shadow: 0 2px 0 orange; /* 1px solid bottom shadow in orange */
-}
-.nav-wrapper {
-    width:1300px;
-    display:flex; 
     justify-content: space-between;
-    margin:auto;
-    z-index:12;
+    align-items: center;
+    background: transparent;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative; /* Ensure this is set so elements inside can be positioned absolutely */
+    transition: background-color 0.3s ease;
+    z-index: 99;
 }
+
+/*Fixed menu*/
+
+.navigation-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    transition: background-color 0.3s ease;
+}
+
+/* Change background when scrolled */
+.navigation-menu.scrolled {
+    background-color: #0D0D0D; 
+}
+
+
+.nav-wrapper {
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    z-index: 12;
+}
+
 .d-flex {
-    display:flex;
+    display: flex;
 }
 
 .a-center {
-align-items:center;
+    align-items: center;
 }
 
 .logo-container {
-    flex: 1; /* Allow the logo container to take space */
+    flex: 1;
 }
 
 .logo {
-    max-height: 50px; 
+    max-height: 50px;
     min-width: 70px;
     min-height: 70px;
 }
@@ -35,45 +60,56 @@ align-items:center;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 0.8em;
 }
 
 .navigation-item {
-    margin: 0 15px; 
+    margin: 0 15px;
+    position: relative;
 }
+
 .navigation-link:hover {
-    color: white; /* Change text color on hover */
+    color: white;
 }
 
 .navigation-link {
-    color: #fff; /* Text color */
-    text-decoration: none; /* Remove underline */
-    font-size: 1.2em; /* Adjust font size */
+    display:flex;
+    align-items:flex-start; 
+    flex-direction: row;
+    gap:4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
     transition: color 0.3s;
 }
-
+.navigation-link svg {
+    margin-top:2px;
+    margin-right:2px;
+}
 
 .mobile-menu-toggle {
-    font-size: 1.8em; /* This will change the size of the SVG icon */
-    color: #fff; /* Icon color */
-    cursor:pointer;
+    font-size: 1.8em;
+    color: #fff;
+    cursor: pointer;
 }
 
 .navigation-item-highlighted {
-    position: relative; /* To position the icon absolutely */
+    position: relative;
     padding: 8px 28px;
     border-radius: 6px;
     background: linear-gradient(to right, #ff7f50, #ff4500);
-    color: white; 
-    overflow: hidden; /* Hide the overflowing icon */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
-    transform: scale(1); /* Default scale */
+    color: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: scale(1);
 }
 
 .navigation-item-highlighted:hover {
-    transform: scale(0.96); /* Shrink the item on hover */
+    transform: scale(0.96);
 }
 
-/* Background fill effect */
 .navigation-item-highlighted::before {
     content: '';
     position: absolute;
@@ -81,56 +117,141 @@ align-items:center;
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.3); /* Light overlay */
-    transform: translateX(-100%); /* Start from the left */
-    transition: transform 1s ease; /* Fill background over 4 seconds */
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-100%);
+    transition: transform 1s ease;
 }
 
 .navigation-icon {
-    margin-left: 10px; /* Space between text and icon */
-    opacity: 0; /* Hide icon initially */
-    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
+
 .logo {
-    padding-top:10px;
-    padding-bottom:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-@media (min-width:768px) {
+@media (min-width: 1400px) {
     .mobile-menu-toggle {
-        display:none;
+        display: none;
     }
 }
 
-@media (max-width: 768px) {
-    .navigation-list {
-        display: none; /* Hide menu by default on mobile */
-        flex-direction: column; /* Stack items vertically */
-        position: absolute; /* Position menu */
-        top: 60px; /* Adjust as needed based on your design */
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.9); /* Background for the dropdown */
-        padding: 10px 0; /* Padding for dropdown */
-        z-index: 1; /* Ensure it appears above other content */
-        margin-top:33px;
-    }
+/*Chevron styles*/
+.chevron-icon {
+    font-size: 1em; 
+    margin-left: 5px;
+    transition: transform 0.3s ease; 
+    color: #ff4500;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
 
-    .navigation-list.active {
-        display: flex; 
-        z-index:10;
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.dropdown-toggle .chevron-icon {
+    transform: rotate(0deg);
+}
+
+.dropdown-toggle.open .chevron-icon {
+    transform: rotate(180deg); 
+}
+
+
+/* Dropdown styles */
+.dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px 20px;
+}
+
+.dropdown-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    position: absolute;
+    top: 100%; /* Positions dropdown directly below the parent */
+    left: 0;
+    right: 0;
+    z-index: 5;
+    display: none; /* Hidden by default */
+    width: 100%; /* Make sure dropdown takes the full width */
+    border-radius:16px;
+    padding: 10px 20px;
+    width:300px;
+    height:auto;
+}
+.dropdown-item:hover {
+    background-color: #ff4500;
+    border-radius:16px;
+    padding: 10px 20px;
+    height:auto;
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.dropdown-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Display the dropdown list when open */
+.navigation-item:hover .dropdown-list {
+    display: block;
+}
+
+
+/* Mobile styles */
+@media (max-width:1400px) {
+    .active {
+        display: flex;
+        z-index: 10;
     }
 
     .mobile-menu-toggle {
-        display:block;
-        color:white; 
+        display: block;
+        color: white;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     .navigation-item {
-        margin: 10px 0; /* Spacing for mobile items */
-        text-align: center; /* Center items */
+        margin: 10px 0;
+        text-align: center;
+    }
+    .navigation-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 10px 0;
+        z-index: 1;
+        margin-top: 33px;
+    }
+}
+
+@media only screen and (max-width:1400px) {
+    .passive-hide {
+        display:none!important;
+    }
+    .active {
+        display:flex;
     }
 }

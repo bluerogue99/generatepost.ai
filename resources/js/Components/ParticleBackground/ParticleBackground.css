@@ -1,0 +1,15 @@
+
+  .showcase-container, .features-container {
+    position:relative;
+    overflow:hidden;
+  }
+  
+  .particle-background {
+    position: absolute;
+    background-color: #0D0D0D;
+    top: 0px;
+    left: 0px;
+    width: 100vw; 
+    z-index: -1;  
+  }
+  

@@ -1,0 +1,175 @@
+.hero-block {
+    display: flex;
+    width:-webkit-fill-available;
+    overflow: hidden;
+    min-height:700px;
+}
+
+.hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10rem;
+    padding-right: 2em;
+    z-index:1;
+    max-width: 900px;
+}
+
+.hero-title {
+    font-family: Inter, sans-serif;
+    font-size: 3.2rem;
+    text-align:left;
+    line-height:normal;
+    font-weight:700;
+    color:white;
+}
+
+.hero-text {
+    font-family:Inter, sans-serif; 
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #A8ACB7;
+}
+
+.hero-button {
+    position: relative;
+    padding: 8px 28px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #ff7f50, #ff4500);
+    color: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    max-width: 200px;
+}
+
+.hero-button:hover {
+    transform: scale(0.96);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+.hero-block {
+    margin-top: -90px;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: #0D0D0D;
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    height:100vh;
+}
+
+/*Future animation*/
+
+
+.hero-title-future {
+    color: #ff4500; 
+}
+.hero-title-word {
+    display: inline-block;
+    opacity: 0; /* Start hidden until animation begins */
+    animation: slideUpFadeIn 1s ease-out forwards;
+}
+
+.social-icons {
+    color: #ff4500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    margin-left: -8em;
+    gap:10px;
+    cursor:pointer;
+}
+.social-icons svg {
+    background: white;
+    padding: 1em;
+    border-radius: 4px;
+    color: #ff4500;
+    width:20px;
+    height:20px;
+}
+
+.hero-scroll-icon-wrapper {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 2em;
+    width:70px;
+    z-index:2;
+    cursor:pointer;
+    margin-bottom: 100px;
+}
+
+.hero-image > img {
+    max-width: 60%;
+}
+
+/* Animation keyframes for the "Future" word */
+@keyframes slideUpFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media only screen and (max-width:768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-text {
+        font-size:1rem;
+    }
+    .hero-button {
+        max-width:none;
+        width:100%;
+    }
+    .hero-content {
+        padding-left: 2rem;
+    }
+    .social-icons {
+        position:unset;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-right:0;
+        padding-top:2em;
+    }
+
+    .hero-scroll-icon-wrapper {
+        color: white;
+        position: absolute;
+        bottom: 2em;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        cursor: pointer;
+        width: 70px;
+    }
+}

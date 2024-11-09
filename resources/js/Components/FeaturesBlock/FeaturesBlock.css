@@ -1,0 +1,59 @@
+/*Uses ShowcaseBlock CSS as it the two are connected*/
+.features-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+.features-image-container {
+    flex: 1;
+}
+  
+.features-image {
+    max-width: 400px;
+    height: auto;
+    object-fit: cover; 
+}
+  
+.feature-subcontainer {
+    flex: 1;
+    padding: 20px;
+}
+
+.benefit-title {
+    color: white;
+    margin-right:5px;
+}
+
+@media only screen and (max-width:768px) {
+    .features-container {
+        flex-direction:column;
+    }
+    .particle-background {
+        height:100%;
+    }
+    .showcase-title {
+        font-size:2rem;
+    }
+    .showcase-description {
+        font-size:1rem;
+        color: #A8ACB7;
+    }
+    .feature-subcontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .showcase-title, .showcase-description {
+        text-align:center;
+    }
+    .features-image-container {
+        display: flex;
+        justify-content: center;
+    }
+    .features-image {
+        max-width: none;
+        width: 70%;
+    }
+}

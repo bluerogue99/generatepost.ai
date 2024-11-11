@@ -4,7 +4,7 @@ import AuthFacebookPost from '../AuthFacebookPost/AuthFacebookPost';
 import AuthInstagramPost from '../AuthInstagramPost/AuthInstagramPost';
 import AuthTikTokPost from '../AuthTikTokPost/AuthTikTokPost';
 import AuthXPost from '../AuthXPost/AuthXPost';
-import AuthLinkedInPost from '../AuthLinkedInPost/AuthLinkedinPost';
+import AuthLinkedInPost from '../AuthLinkedInPost/AuthLinkedinPost.jsx';
 import { usePage } from '@inertiajs/react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

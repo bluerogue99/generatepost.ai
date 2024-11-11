@@ -1,0 +1,709 @@
+{
+  "_ApplicationLogo-B_-S-Tus.js": {
+    "file": "assets/ApplicationLogo-B_-S-Tus.js",
+    "name": "ApplicationLogo",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_AuthenticatedLayout-!~{00d}~.js": {
+    "file": "assets/AuthenticatedLayout-DDsyaz-y.css",
+    "src": "_AuthenticatedLayout-!~{00d}~.js"
+  },
+  "_AuthenticatedLayout-BCTVf8rY.js": {
+    "file": "assets/AuthenticatedLayout-BCTVf8rY.js",
+    "name": "AuthenticatedLayout",
+    "imports": [
+      "resources/js/app.jsx",
+      "_ApplicationLogo-B_-S-Tus.js",
+      "_transition-CY9_aEky.js"
+    ],
+    "css": [
+      "assets/AuthenticatedLayout-DDsyaz-y.css"
+    ]
+  },
+  "_GuestLayout--Yv4vKlp.js": {
+    "file": "assets/GuestLayout--Yv4vKlp.js",
+    "name": "GuestLayout",
+    "imports": [
+      "resources/js/app.jsx",
+      "_ApplicationLogo-B_-S-Tus.js"
+    ]
+  },
+  "_InputLabel-BAoCgXMS.js": {
+    "file": "assets/InputLabel-BAoCgXMS.js",
+    "name": "InputLabel",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_PrimaryButton-D9LjF7zQ.js": {
+    "file": "assets/PrimaryButton-D9LjF7zQ.js",
+    "name": "PrimaryButton",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_ReactToastify-!~{00o}~.js": {
+    "file": "assets/ReactToastify-BE4BdE5o.css",
+    "src": "_ReactToastify-!~{00o}~.js"
+  },
+  "_ReactToastify-BgGP3dPt.js": {
+    "file": "assets/ReactToastify-BgGP3dPt.js",
+    "name": "ReactToastify",
+    "imports": [
+      "resources/js/app.jsx"
+    ],
+    "css": [
+      "assets/ReactToastify-BE4BdE5o.css"
+    ]
+  },
+  "_TextInput-DSRhOTL3.js": {
+    "file": "assets/TextInput-DSRhOTL3.js",
+    "name": "TextInput",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_index-uHryLmS9.js": {
+    "file": "assets/index-uHryLmS9.js",
+    "name": "index",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_transition-CY9_aEky.js": {
+    "file": "assets/transition-CY9_aEky.js",
+    "name": "transition",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff": {
+    "file": "assets/roboto-cyrillic-300-normal-Dg7J0kAT.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff2": {
+    "file": "assets/roboto-cyrillic-300-normal-DJfICpyc.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff": {
+    "file": "assets/roboto-cyrillic-400-normal-JN0iKxGs.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff2": {
+    "file": "assets/roboto-cyrillic-400-normal-BiRJyiea.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff": {
+    "file": "assets/roboto-cyrillic-500-normal-YnJLGrUm.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff2": {
+    "file": "assets/roboto-cyrillic-500-normal-_hamcpv8.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff": {
+    "file": "assets/roboto-cyrillic-700-normal-BJaAVvFw.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff2": {
+    "file": "assets/roboto-cyrillic-700-normal-jruQITdB.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff": {
+    "file": "assets/roboto-cyrillic-ext-300-normal-BLLmCegk.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff2": {
+    "file": "assets/roboto-cyrillic-ext-300-normal-Chhwl1Jq.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff": {
+    "file": "assets/roboto-cyrillic-ext-400-normal-b0JluIOJ.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff2": {
+    "file": "assets/roboto-cyrillic-ext-400-normal-D76n7Daw.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff": {
+    "file": "assets/roboto-cyrillic-ext-500-normal-37WQE4S0.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff2": {
+    "file": "assets/roboto-cyrillic-ext-500-normal-BJvL3D7h.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff": {
+    "file": "assets/roboto-cyrillic-ext-700-normal-DXzexxfu.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff2": {
+    "file": "assets/roboto-cyrillic-ext-700-normal-CyZgh00P.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff": {
+    "file": "assets/roboto-greek-300-normal-D3gN5oZ1.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff2": {
+    "file": "assets/roboto-greek-300-normal-Bx8edVml.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff": {
+    "file": "assets/roboto-greek-400-normal-IIc_WWwF.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff2": {
+    "file": "assets/roboto-greek-400-normal-LPh2sqOm.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff": {
+    "file": "assets/roboto-greek-500-normal-CdRewbqV.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff2": {
+    "file": "assets/roboto-greek-500-normal-Bg8BLohm.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff": {
+    "file": "assets/roboto-greek-700-normal-1IZ-NEfb.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff2": {
+    "file": "assets/roboto-greek-700-normal-Bs05n1ZH.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff": {
+    "file": "assets/roboto-greek-ext-300-normal-CoCnnQ5_.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff2": {
+    "file": "assets/roboto-greek-ext-300-normal-CHja2Rnh.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff": {
+    "file": "assets/roboto-greek-ext-400-normal-BCjajyEd.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff2": {
+    "file": "assets/roboto-greek-ext-400-normal-Dduq6i1a.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff": {
+    "file": "assets/roboto-greek-ext-500-normal-CaTXacGx.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff2": {
+    "file": "assets/roboto-greek-ext-500-normal-BpeNdPLE.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff": {
+    "file": "assets/roboto-greek-ext-700-normal-CEVyGtw_.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff2": {
+    "file": "assets/roboto-greek-ext-700-normal-CqebB7cL.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff": {
+    "file": "assets/roboto-latin-300-normal-BZ6gvbSO.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff2": {
+    "file": "assets/roboto-latin-300-normal-BizgZZ3y.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff": {
+    "file": "assets/roboto-latin-400-normal-BVyCgWwA.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2": {
+    "file": "assets/roboto-latin-400-normal-DXyFPIdK.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff": {
+    "file": "assets/roboto-latin-500-normal-rpP1_v3s.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff2": {
+    "file": "assets/roboto-latin-500-normal-C6iW8rdg.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff": {
+    "file": "assets/roboto-latin-700-normal-BWcFiwQV.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff2": {
+    "file": "assets/roboto-latin-700-normal-CbYYDfWS.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff": {
+    "file": "assets/roboto-latin-ext-300-normal-Djx841zm.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff2": {
+    "file": "assets/roboto-latin-ext-300-normal-BzRVPTS2.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff": {
+    "file": "assets/roboto-latin-ext-400-normal-BSFkPfbf.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff2": {
+    "file": "assets/roboto-latin-ext-400-normal-DgXbz5gU.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff": {
+    "file": "assets/roboto-latin-ext-500-normal-DvHxAkTn.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff2": {
+    "file": "assets/roboto-latin-ext-500-normal-OQJhyaXd.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff": {
+    "file": "assets/roboto-latin-ext-700-normal-Ba-CAIIA.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff2": {
+    "file": "assets/roboto-latin-ext-700-normal-DchBbzVz.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff": {
+    "file": "assets/roboto-vietnamese-300-normal-CAomnZLO.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff2": {
+    "file": "assets/roboto-vietnamese-300-normal-PZa9KE_J.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff": {
+    "file": "assets/roboto-vietnamese-400-normal-D5pJwT9g.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff2": {
+    "file": "assets/roboto-vietnamese-400-normal-DhTUfTw_.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff": {
+    "file": "assets/roboto-vietnamese-500-normal-LvuCHq7y.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff2": {
+    "file": "assets/roboto-vietnamese-500-normal-p0V0BAAE.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff": {
+    "file": "assets/roboto-vietnamese-700-normal-B4Nagvlm.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff2": {
+    "file": "assets/roboto-vietnamese-700-normal-CBbheh0s.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff2"
+  },
+  "node_modules/slick-carousel/slick/ajax-loader.gif": {
+    "file": "assets/ajax-loader-BcnMEykj.gif",
+    "src": "node_modules/slick-carousel/slick/ajax-loader.gif"
+  },
+  "node_modules/slick-carousel/slick/fonts/slick.eot": {
+    "file": "assets/slick-Bi9J8BMx.eot",
+    "src": "node_modules/slick-carousel/slick/fonts/slick.eot"
+  },
+  "node_modules/slick-carousel/slick/fonts/slick.svg": {
+    "file": "assets/slick-BlzDm7g2.svg",
+    "src": "node_modules/slick-carousel/slick/fonts/slick.svg"
+  },
+  "node_modules/slick-carousel/slick/fonts/slick.ttf": {
+    "file": "assets/slick-DWzRxEMf.ttf",
+    "src": "node_modules/slick-carousel/slick/fonts/slick.ttf"
+  },
+  "node_modules/slick-carousel/slick/fonts/slick.woff": {
+    "file": "assets/slick-BlUtDIuC.woff",
+    "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
+  },
+  "public/assets/GuestLayoutDesign/Astronaut/astrounaut-main.png": {
+    "file": "assets/astrounaut-main-_wF5xczT.png",
+    "src": "public/assets/GuestLayoutDesign/Astronaut/astrounaut-main.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im1.png": {
+    "file": "assets/im1-D-jbY9AO.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im1.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im10.png": {
+    "file": "assets/im10-DvNZ1iVs.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im10.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im2.png": {
+    "file": "assets/im2-WuR2SkNK.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im2.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im3.png": {
+    "file": "assets/im3-BbCNbyXy.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im3.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im4.png": {
+    "file": "assets/im4-BsOKkkMp.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im4.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im5.png": {
+    "file": "assets/im5-CTIdMpQn.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im5.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im6.png": {
+    "file": "assets/im6-BpbYE9jz.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im6.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im7.png": {
+    "file": "assets/im7-Ms0fNjfq.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im7.png"
+  },
+  "public/assets/GuestLayoutDesign/ShowcaseBlock/im9.png": {
+    "file": "assets/im9-C78B8czW.png",
+    "src": "public/assets/GuestLayoutDesign/ShowcaseBlock/im9.png"
+  },
+  "public/assets/GuestLayoutDesign/TargetedBlock/arrow-right.svg": {
+    "file": "assets/arrow-right-aYv5by4L.svg",
+    "src": "public/assets/GuestLayoutDesign/TargetedBlock/arrow-right.svg"
+  },
+  "resources/js/Pages/Analytics.jsx": {
+    "file": "assets/Analytics-Bfpd9Vzu.js",
+    "name": "Analytics",
+    "src": "resources/js/Pages/Analytics.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BCTVf8rY.js",
+      "_ApplicationLogo-B_-S-Tus.js",
+      "_transition-CY9_aEky.js"
+    ],
+    "css": [
+      "assets/Analytics-CGo55f7o.css"
+    ]
+  },
+  "resources/js/Pages/Auth/ConfirmPassword.jsx": {
+    "file": "assets/ConfirmPassword-Bg34rUP_.js",
+    "name": "ConfirmPassword",
+    "src": "resources/js/Pages/Auth/ConfirmPassword.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-DSRhOTL3.js",
+      "_InputLabel-BAoCgXMS.js",
+      "_PrimaryButton-D9LjF7zQ.js",
+      "_GuestLayout--Yv4vKlp.js",
+      "_ApplicationLogo-B_-S-Tus.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ForgotPassword.jsx": {
+    "file": "assets/ForgotPassword-Bwox_IW0.js",
+    "name": "ForgotPassword",
+    "src": "resources/js/Pages/Auth/ForgotPassword.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-DSRhOTL3.js",
+      "_PrimaryButton-D9LjF7zQ.js",
+      "_GuestLayout--Yv4vKlp.js",
+      "_ApplicationLogo-B_-S-Tus.js"
+    ]
+  },
+  "resources/js/Pages/Auth/Login.jsx": {
+    "file": "assets/Login-DmOlgQuS.js",
+    "name": "Login",
+    "src": "resources/js/Pages/Auth/Login.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-DSRhOTL3.js",
+      "_InputLabel-BAoCgXMS.js",
+      "_PrimaryButton-D9LjF7zQ.js",
+      "_GuestLayout--Yv4vKlp.js",
+      "_ApplicationLogo-B_-S-Tus.js"
+    ]
+  },
+  "resources/js/Pages/Auth/Register.jsx": {
+    "file": "assets/Register-8Uf_J49g.js",
+    "name": "Register",
+    "src": "resources/js/Pages/Auth/Register.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-DSRhOTL3.js",
+      "_InputLabel-BAoCgXMS.js",
+      "_PrimaryButton-D9LjF7zQ.js",
+      "_GuestLayout--Yv4vKlp.js",
+      "_ApplicationLogo-B_-S-Tus.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ResetPassword.jsx": {
+    "file": "assets/ResetPassword-D3OAsvD9.js",
+    "name": "ResetPassword",
+    "src": "resources/js/Pages/Auth/ResetPassword.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-DSRhOTL3.js",
+      "_InputLabel-BAoCgXMS.js",
+      "_PrimaryButton-D9LjF7zQ.js",
+      "_GuestLayout--Yv4vKlp.js",
+      "_ApplicationLogo-B_-S-Tus.js"
+    ]
+  },
+  "resources/js/Pages/Auth/VerifyEmail.jsx": {
+    "file": "assets/VerifyEmail-sQGQuPhC.js",
+    "name": "VerifyEmail",
+    "src": "resources/js/Pages/Auth/VerifyEmail.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_PrimaryButton-D9LjF7zQ.js",
+      "_GuestLayout--Yv4vKlp.js",
+      "_ApplicationLogo-B_-S-Tus.js"
+    ]
+  },
+  "resources/js/Pages/Dashboard.jsx": {
+    "file": "assets/Dashboard-cbQliy_S.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Dashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BCTVf8rY.js",
+      "_ReactToastify-BgGP3dPt.js",
+      "_ApplicationLogo-B_-S-Tus.js",
+      "_transition-CY9_aEky.js"
+    ],
+    "css": [
+      "assets/Dashboard-D_bH3Lde.css"
+    ]
+  },
+  "resources/js/Pages/Generate.jsx": {
+    "file": "assets/Generate-IOzaR1PC.js",
+    "name": "Generate",
+    "src": "resources/js/Pages/Generate.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BCTVf8rY.js",
+      "_index-uHryLmS9.js",
+      "_ReactToastify-BgGP3dPt.js",
+      "_ApplicationLogo-B_-S-Tus.js",
+      "_transition-CY9_aEky.js"
+    ],
+    "css": [
+      "assets/Generate-I3h7Mfju.css"
+    ]
+  },
+  "resources/js/Pages/Integration.jsx": {
+    "file": "assets/Integration-Bzt6DCdA.js",
+    "name": "Integration",
+    "src": "resources/js/Pages/Integration.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BCTVf8rY.js",
+      "_ApplicationLogo-B_-S-Tus.js",
+      "_transition-CY9_aEky.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Edit.jsx": {
+    "file": "assets/Edit-BUikfLZF.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Profile/Edit.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BCTVf8rY.js",
+      "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
+      "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
+      "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx",
+      "_ApplicationLogo-B_-S-Tus.js",
+      "_transition-CY9_aEky.js",
+      "_TextInput-DSRhOTL3.js",
+      "_InputLabel-BAoCgXMS.js",
+      "_PrimaryButton-D9LjF7zQ.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx": {
+    "file": "assets/DeleteUserForm-B7ZKjCOK.js",
+    "name": "DeleteUserForm",
+    "src": "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-DSRhOTL3.js",
+      "_InputLabel-BAoCgXMS.js",
+      "_transition-CY9_aEky.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx": {
+    "file": "assets/UpdatePasswordForm-BeOrHmBn.js",
+    "name": "UpdatePasswordForm",
+    "src": "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-DSRhOTL3.js",
+      "_InputLabel-BAoCgXMS.js",
+      "_PrimaryButton-D9LjF7zQ.js",
+      "_transition-CY9_aEky.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx": {
+    "file": "assets/UpdateProfileInformationForm-CNWrt4GT.js",
+    "name": "UpdateProfileInformationForm",
+    "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-DSRhOTL3.js",
+      "_InputLabel-BAoCgXMS.js",
+      "_PrimaryButton-D9LjF7zQ.js",
+      "_transition-CY9_aEky.js"
+    ]
+  },
+  "resources/js/Pages/StripeCancel.jsx": {
+    "file": "assets/StripeCancel-DMjEdHhe.js",
+    "name": "StripeCancel",
+    "src": "resources/js/Pages/StripeCancel.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BCTVf8rY.js",
+      "_ApplicationLogo-B_-S-Tus.js",
+      "_transition-CY9_aEky.js"
+    ]
+  },
+  "resources/js/Pages/StripeSuccess.jsx": {
+    "file": "assets/StripeSuccess-YKkTzZui.js",
+    "name": "StripeSuccess",
+    "src": "resources/js/Pages/StripeSuccess.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BCTVf8rY.js",
+      "_ApplicationLogo-B_-S-Tus.js",
+      "_transition-CY9_aEky.js"
+    ]
+  },
+  "resources/js/Pages/Welcome.jsx": {
+    "file": "assets/Welcome-cZpUNHmx.js",
+    "name": "Welcome",
+    "src": "resources/js/Pages/Welcome.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-uHryLmS9.js",
+      "_ReactToastify-BgGP3dPt.js"
+    ],
+    "css": [
+      "assets/Welcome-DazhqLYk.css"
+    ],
+    "assets": [
+      "assets/im1-D-jbY9AO.png",
+      "assets/im2-WuR2SkNK.png",
+      "assets/im3-BbCNbyXy.png",
+      "assets/im4-BsOKkkMp.png",
+      "assets/im5-CTIdMpQn.png",
+      "assets/im6-BpbYE9jz.png",
+      "assets/im7-Ms0fNjfq.png",
+      "assets/im9-C78B8czW.png",
+      "assets/im10-DvNZ1iVs.png",
+      "assets/astrounaut-main-_wF5xczT.png",
+      "assets/arrow-right-aYv5by4L.svg",
+      "assets/ajax-loader-BcnMEykj.gif",
+      "assets/slick-Bi9J8BMx.eot",
+      "assets/slick-BlUtDIuC.woff",
+      "assets/slick-DWzRxEMf.ttf",
+      "assets/slick-BlzDm7g2.svg"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-DVjSjCXE.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Analytics.jsx",
+      "resources/js/Pages/Auth/ConfirmPassword.jsx",
+      "resources/js/Pages/Auth/ForgotPassword.jsx",
+      "resources/js/Pages/Auth/Login.jsx",
+      "resources/js/Pages/Auth/Register.jsx",
+      "resources/js/Pages/Auth/ResetPassword.jsx",
+      "resources/js/Pages/Auth/VerifyEmail.jsx",
+      "resources/js/Pages/Dashboard.jsx",
+      "resources/js/Pages/Generate.jsx",
+      "resources/js/Pages/Integration.jsx",
+      "resources/js/Pages/Profile/Edit.jsx",
+      "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
+      "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
+      "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx",
+      "resources/js/Pages/StripeCancel.jsx",
+      "resources/js/Pages/StripeSuccess.jsx",
+      "resources/js/Pages/Welcome.jsx"
+    ],
+    "css": [
+      "assets/app-CXiv-_TI.css"
+    ],
+    "assets": [
+      "assets/roboto-cyrillic-ext-300-normal-Chhwl1Jq.woff2",
+      "assets/roboto-cyrillic-ext-300-normal-BLLmCegk.woff",
+      "assets/roboto-cyrillic-300-normal-DJfICpyc.woff2",
+      "assets/roboto-cyrillic-300-normal-Dg7J0kAT.woff",
+      "assets/roboto-greek-ext-300-normal-CHja2Rnh.woff2",
+      "assets/roboto-greek-ext-300-normal-CoCnnQ5_.woff",
+      "assets/roboto-greek-300-normal-Bx8edVml.woff2",
+      "assets/roboto-greek-300-normal-D3gN5oZ1.woff",
+      "assets/roboto-vietnamese-300-normal-PZa9KE_J.woff2",
+      "assets/roboto-vietnamese-300-normal-CAomnZLO.woff",
+      "assets/roboto-latin-ext-300-normal-BzRVPTS2.woff2",
+      "assets/roboto-latin-ext-300-normal-Djx841zm.woff",
+      "assets/roboto-latin-300-normal-BizgZZ3y.woff2",
+      "assets/roboto-latin-300-normal-BZ6gvbSO.woff",
+      "assets/roboto-cyrillic-ext-400-normal-D76n7Daw.woff2",
+      "assets/roboto-cyrillic-ext-400-normal-b0JluIOJ.woff",
+      "assets/roboto-cyrillic-400-normal-BiRJyiea.woff2",
+      "assets/roboto-cyrillic-400-normal-JN0iKxGs.woff",
+      "assets/roboto-greek-ext-400-normal-Dduq6i1a.woff2",
+      "assets/roboto-greek-ext-400-normal-BCjajyEd.woff",
+      "assets/roboto-greek-400-normal-LPh2sqOm.woff2",
+      "assets/roboto-greek-400-normal-IIc_WWwF.woff",
+      "assets/roboto-vietnamese-400-normal-DhTUfTw_.woff2",
+      "assets/roboto-vietnamese-400-normal-D5pJwT9g.woff",
+      "assets/roboto-latin-ext-400-normal-DgXbz5gU.woff2",
+      "assets/roboto-latin-ext-400-normal-BSFkPfbf.woff",
+      "assets/roboto-latin-400-normal-DXyFPIdK.woff2",
+      "assets/roboto-latin-400-normal-BVyCgWwA.woff",
+      "assets/roboto-cyrillic-ext-500-normal-BJvL3D7h.woff2",
+      "assets/roboto-cyrillic-ext-500-normal-37WQE4S0.woff",
+      "assets/roboto-cyrillic-500-normal-_hamcpv8.woff2",
+      "assets/roboto-cyrillic-500-normal-YnJLGrUm.woff",
+      "assets/roboto-greek-ext-500-normal-BpeNdPLE.woff2",
+      "assets/roboto-greek-ext-500-normal-CaTXacGx.woff",
+      "assets/roboto-greek-500-normal-Bg8BLohm.woff2",
+      "assets/roboto-greek-500-normal-CdRewbqV.woff",
+      "assets/roboto-vietnamese-500-normal-p0V0BAAE.woff2",
+      "assets/roboto-vietnamese-500-normal-LvuCHq7y.woff",
+      "assets/roboto-latin-ext-500-normal-OQJhyaXd.woff2",
+      "assets/roboto-latin-ext-500-normal-DvHxAkTn.woff",
+      "assets/roboto-latin-500-normal-C6iW8rdg.woff2",
+      "assets/roboto-latin-500-normal-rpP1_v3s.woff",
+      "assets/roboto-cyrillic-ext-700-normal-CyZgh00P.woff2",
+      "assets/roboto-cyrillic-ext-700-normal-DXzexxfu.woff",
+      "assets/roboto-cyrillic-700-normal-jruQITdB.woff2",
+      "assets/roboto-cyrillic-700-normal-BJaAVvFw.woff",
+      "assets/roboto-greek-ext-700-normal-CqebB7cL.woff2",
+      "assets/roboto-greek-ext-700-normal-CEVyGtw_.woff",
+      "assets/roboto-greek-700-normal-Bs05n1ZH.woff2",
+      "assets/roboto-greek-700-normal-1IZ-NEfb.woff",
+      "assets/roboto-vietnamese-700-normal-CBbheh0s.woff2",
+      "assets/roboto-vietnamese-700-normal-B4Nagvlm.woff",
+      "assets/roboto-latin-ext-700-normal-DchBbzVz.woff2",
+      "assets/roboto-latin-ext-700-normal-Ba-CAIIA.woff",
+      "assets/roboto-latin-700-normal-CbYYDfWS.woff2",
+      "assets/roboto-latin-700-normal-BWcFiwQV.woff"
+    ]
+  }
+}

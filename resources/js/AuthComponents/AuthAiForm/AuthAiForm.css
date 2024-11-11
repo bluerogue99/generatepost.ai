@@ -114,6 +114,93 @@ select:focus {
     display: none; 
 }
 
+
+/*Target audience css*/
+.age-from-wrapper, .age-to-wrapper {
+    display:flex;
+    justify-content:flex-start; 
+    flex-direction: column;
+    width:100%;
+}
+.age-from-input, .age-to-input, .location-input, .interest-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    background-color: #444;
+    color: white;
+}
+.age-from-input::placeholder, .age-to-input::placeholder, .location-input::placeholder, .interest-input::placeholder {
+    color: #bbb;
+}
+
+.age-from-wrapper label, .age-to-wrapper label {
+    text-align:left;
+}
+.age-wrapper {
+    display:flex; 
+    flex-direction: row;
+    gap:10px;
+}
+
+
+.gender-wrapper {
+    display:flex; 
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-direction:column;
+}
+.gender-label-wrapper {
+    display:flex;
+    gap:20px;
+    padding-bottom:20px;
+    padding-top:20px;
+}
+.gender-label {
+    display:flex; 
+    gap:5px;
+    align-items:center;
+    cursor:pointer;
+}
+
+[type='checkbox'], [type='radio'] {
+    color: #ff4500;
+    cursor:pointer;
+    border:none;
+}
+[type='checkbox']:checked:hover, [type='checkbox']:checked:focus, [type='radio']:checked:hover, [type='radio']:checked:focus {
+    border-color: transparent;
+    background-color: #ff4500;
+}
+[type='checkbox']:focus, [type='radio']:focus {
+    outline: none;
+    outline-offset: none;
+    --tw-ring-offset-color: #ff4500;
+    --tw-ring-color: #ff4500;
+}
+
+.location-interest-wrapper {
+    display:flex; 
+    gap:10px;
+    padding-bottom:20px;
+}
+.location-label, .interest-label {
+    text-align:left;
+}
+.location-wrapper {
+    display:flex; 
+    flex-direction:column; 
+    width:50%;
+}
+.interest-wrapper {
+    display:flex; 
+    flex-direction:column; 
+    width:50%;
+}
+
+
+
 @media only screen and (max-width:768px) {
     .premium-inner-container {
         display:none;

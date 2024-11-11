@@ -3,14 +3,62 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './AuthenticatedLayout.css';
+import axios from 'axios';
 
 export default function AuthenticatedLayout({ children }) {
-    const user = usePage().props.auth.user;
+    const { user } = usePage().props.auth || {}; 
+    const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+    const [subscriptionStatus, setSubscriptionStatus] = useState(null);
 
-    const [showingNavigationDropdown, setShowingNavigationDropdown] =
-        useState(false);
+
+    useEffect(() => {
+        const fetchSubscriptionStatus = async () => {
+            try {
+                const response = await axios.get('/subscription-status'); 
+                setSubscriptionStatus(response.data.subscription_status); 
+            } catch (error) {
+                console.error('Error fetching subscription status:', error);
+            }
+        };
+        if (!subscriptionStatus) {
+            fetchSubscriptionStatus();
+        }
+    }, [subscriptionStatus]);
+
+    const handleCheckout = async () => {
+        try {
+            const stripeKey = import.meta.env.VITE_STRIPE_KEY;
+            const response = await axios.post('/create-checkout-session');
+            const sessionId = response.data.id;
+        
+            const stripe = window.Stripe(stripeKey);
+            const { error } = await stripe.redirectToCheckout({ sessionId });
+        
+            if (error) {
+                console.error('Stripe Checkout error:', error);
+            }
+        } catch (error) {
+            console.error('Error creating checkout session:', error);
+        }
+    };
+
+    const handleCancelSubscription = async () => {
+        try {
+            const response = await axios.post('/cancel-subscription');
+            if (response.data.success) {
+                alert('Subscription cancelled');
+            } else {
+                alert('No active subscription found');
+            }
+        } catch (error) {
+            console.error('Error cancelling subscription:', error.response?.data || error.message);
+            alert('An error occurred while cancelling the subscription. Please try again later.');
+        }
+    };
+
+        
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
             <nav className="border-b border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -36,16 +84,27 @@ export default function AuthenticatedLayout({ children }) {
                                 >
                                     Dashboard
                                 </NavLink>
-                                <NavLink 
-                                    href={route('analytics')} 
-                                    active={route().current('analytics')}
-                                >
-                                    Analytics
-                                </NavLink>
                             </div>
                         </div>
 
+                        
                         <div className="hidden sm:ms-6 sm:flex sm:items-center">
+                            {/* Subscription */}
+                            <div className="subscription-wrapper">
+                                <span className="subscription-status">
+                                    Subscription status: {subscriptionStatus === 'active' ? 'Subscribed' : 'Unsubscribed'}
+                                </span>
+
+                                {subscriptionStatus === 'active' ? (
+                                    <button className="subscription-link" onClick={handleCancelSubscription}>
+                                        Cancel Premium
+                                    </button>
+                                ) : (
+                                    <button className="subscription-link" onClick={handleCheckout}>
+                                        Get Premium
+                                    </button>
+                                )}
+                            </div>
                             <div className="relative ms-3">
                                 <Dropdown>
                                     <Dropdown.Trigger>
@@ -75,9 +134,6 @@ export default function AuthenticatedLayout({ children }) {
                                     <Dropdown.Content>
                                         <Dropdown.Link href={route('profile.edit')}>
                                             Profile
-                                        </Dropdown.Link>
-                                        <Dropdown.Link href={route('integration')}>
-                                            Integrations
                                         </Dropdown.Link>
                                         <Dropdown.Link href={route('logout')} method="post" as="button">
                                             Log Out
@@ -159,8 +215,8 @@ export default function AuthenticatedLayout({ children }) {
                             <ResponsiveNavLink href={route('profile.edit')}>
                                 Profile
                             </ResponsiveNavLink>
-                            <ResponsiveNavLink href={route('integration')}>
-                                Integrations
+                            <ResponsiveNavLink href={route('subscription')}>
+                                Subscription
                             </ResponsiveNavLink>
                             <ResponsiveNavLink
                                 method="post"
@@ -173,7 +229,9 @@ export default function AuthenticatedLayout({ children }) {
                     </div>
                 </div>
             </nav>
-            <main>{children}</main>
+            <main>
+                {children}
+            </main>
         </div>
     );
 }

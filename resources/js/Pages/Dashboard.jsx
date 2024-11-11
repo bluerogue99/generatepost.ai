@@ -123,13 +123,13 @@ export default function Dashboard(props) {
                                             <tr>
                                                 <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Post Headline</th>
                                                 <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Post Content</th>
-                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Image URL</th>
-                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Status</th>
-                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Topic Entered</th>
-                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Image Prompt</th>
-                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Platform Selected</th>
-                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Tone Selected</th>
-                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Created By</th>
+                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Image</th>
+                                                {/*<th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Status</th>*/}
+                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Topic</th>
+                                                {/*<th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Image Prompt</th>*/}
+                                                <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Platform</th>
+                                                {/*<th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Tone Selected</th>*/}
+                                                {/*<th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Created By</th>*/}
                                                 <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider">Actions</th>
                                             </tr>
                                         </thead>
@@ -149,21 +149,23 @@ export default function Dashboard(props) {
                                                             'N/A'
                                                         )}
                                                     </td>
-                                                    <td className="px-2 py-4 whitespace-nowrap text-sm">{post.post_status}</td>
+                                                    {/*<td className="px-2 py-4 whitespace-nowrap text-sm">{post.post_status}</td>*/}
                                                     <td className="px-2 py-4 whitespace-nowrap text-sm">{post.post_topic_entered || 'N/A'}</td>
-                                                    <td className="px-2 py-4 whitespace-nowrap text-sm">{post.image_prompt_entered || 'N/A'}</td>
+                                                    {/*<td className="px-2 py-4 whitespace-nowrap text-sm">{post.image_prompt_entered || 'N/A'}</td>*/}
                                                     <td className="px-2 py-4 whitespace-nowrap text-sm">{post.platform_selected || 'N/A'}</td>
-                                                    <td className="px-2 py-4 whitespace-nowrap text-sm">{post.tone_selected || 'N/A'}</td>
-                                                    <td className="px-2 py-4 whitespace-nowrap text-sm">{post.user ? post.user.name : 'Unknown'}</td>
-                                                    <td className="px-2 py-4 whitespace-nowrap text-sm">
+                                                    {/*<td className="px-2 py-4 whitespace-nowrap text-sm">{post.tone_selected || 'N/A'}</td>*/}
+                                                    {/*<td className="px-2 py-4 whitespace-nowrap text-sm">{post.user ? post.user.name : 'Unknown'}</td>*/}
+                                                    <td className="button-wrapper">
+                                                        {/*
                                                         <button
                                                             onClick={() => setIsPublishModalOpen(true)}
                                                             className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4"
                                                         >
                                                             Publish Now
                                                         </button>
+                                                        */}
                                                         <button
-                                                            className="text-green-500 hover:text-green-700"
+                                                            className="button view-button"
                                                             onClick={() => {
                                                                 setPostToView(post); 
                                                                 setIsViewModalOpen(true); 
@@ -173,7 +175,7 @@ export default function Dashboard(props) {
                                                         </button>
 
                                                         <button 
-                                                            className="text-blue-500 hover:text-blue-700"
+                                                            className="button edit-button"
                                                             onClick={() => {
                                                                 setPostToEdit(post); 
                                                                 setIsEditModalOpen(true);
@@ -182,7 +184,7 @@ export default function Dashboard(props) {
                                                             Edit
                                                         </button>
                                                         <button 
-                                                            className="text-red-500 hover:text-red-700"
+                                                            className="button delete-button"
                                                             onClick={() => {
                                                                 setPostToDelete(post.id); 
                                                                 setIsModalOpen(true); 

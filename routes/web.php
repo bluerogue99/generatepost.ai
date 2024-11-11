@@ -13,6 +13,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PostGeneratorController;
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -29,10 +30,17 @@ Route::get('/generate', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/analytics', function () {
-    return Inertia::render('Analytics');
-})->middleware(['auth', 'verified'])->name('analytics');
 
+
+Route::get('/subscription', [SubscriptionController::class, 'index'])->name('subscription');
+Route::post('/create-checkout-session', [SubscriptionController::class, 'createCheckoutSession']);
+
+// Stripe
+Route::get('/subscription/success', [SubscriptionController::class, 'success'])->name('subscription.success');
+Route::get('/subscription/cancel', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');
+Route::middleware('auth:sanctum')->get('/subscription-status', [SubscriptionController::class, 'getSubscriptionStatus']);
+Route::post('/cancel-subscription', [SubscriptionController::class, 'cancelledbyuser']);
+Route::post('/stripe-webhook', [SubscriptionController::class, 'webhook']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -118,6 +118,31 @@
     margin-left: 10px;
 }
 
+.button-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    vertical-align: middle;
+    flex-direction: row;
+    height: 100px;
+}
+.button {
+    padding: 0.2em 2em;
+    background:black;
+    margin-left:2px;
+    margin-right:2px;
+    position: relative;
+    padding: 8px 28px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #ff7f50, #ff4500);
+    color: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
 
 @media only screen and (max-width:768px) {
     .view-post {

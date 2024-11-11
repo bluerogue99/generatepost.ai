@@ -39,7 +39,12 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
     const [isImageGenerated, setIsImageGenerated] = useState(false);
     const [isPostSaved, setIsPostSaved] = useState(false);
 
-
+    // State variables for targeted audience
+    const [ageFrom, setAgeFrom] = useState('');
+    const [ageTo, setAgeTo] = useState('');
+    const [gender, setGender] = useState('');
+    const [location, setLocation] = useState('');
+    const [interest, setInterest] = useState('');
 
 
 
@@ -152,6 +157,21 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
         };
 
 
+        // Construct the target audience prompt
+        let audiencePrompt = '';
+        if (ageFrom && ageTo) {
+            audiencePrompt += `Target ${ageFrom}-${ageTo} years old`;
+        }
+        if (gender) {
+            audiencePrompt += ` ${gender.toLowerCase()}`;
+        }
+        if (location) {
+            audiencePrompt += ` who live in ${location}`;
+        }
+        if (interest) {
+            audiencePrompt += ` and are interested in ${interest}`;
+        }
+
         /*Image prompt size adjustment based on platform selected*/
 
 
@@ -186,7 +206,7 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
 
         // Generate the image prompt
         const generateImagePrompt = `Generate a ${selectedPlatform} image on the topic of "${imagePrompt}" with ${resolution}, using ${getArticle(toneOfVoice)} ${toneOfVoice} tone.`;
-        const post = `Generate a ${selectedPlatform} post on the topic "${postTopic}" with ${getArticle(toneOfVoice)} ${toneOfVoice} tone.`;
+        const post = `Generate a ${selectedPlatform} post on the topic "${postTopic}" with ${getArticle(toneOfVoice)} ${toneOfVoice} tone. ${audiencePrompt}`;
         const prompt = post.replace("Your prompt is: ", "").trim();
         const sanitizedPostTopic = postTopic.replace(/"/g, '').replace(/'/g, '');
         const generateHeadlinePrompt = `Create a catchy headline for a ${selectedPlatform} post about ${sanitizedPostTopic} with a ${getArticle(toneOfVoice)} ${toneOfVoice} tone.`;
@@ -330,6 +350,54 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                     </option>
                 ))}
             </select>
+
+            <div className="target-audience">
+                <h2 className="form-label">Set Your Target Audience</h2>
+                <div className="age-wrapper">
+                    <div className="age-from-wrapper">
+                        <label>Age From:</label>
+                        <input className="age-from-input" type="number" value={ageFrom} onChange={(e) => setAgeFrom(e.target.value)} placeholder="20" />
+                    </div>
+                    <div className="age-to-wrapper">
+                        <label>Age To:</label>
+                        <input className="age-to-input" type="number" value={ageTo} onChange={(e) => setAgeTo(e.target.value)} placeholder="25" />
+                    </div>
+                </div>
+
+                <div className="gender-wrapper">
+                    <label>Gender:</label>
+                    <div className="gender-label-wrapper">
+                        <label className="gender-label">
+                            <input type="radio" value="Male" checked={gender === 'Male'} onChange={() => setGender('Male')} />
+                            Male
+                        </label>
+                        <label className="gender-label">
+                            <input type="radio" value="Female" checked={gender === 'Female'} onChange={() => setGender('Female')} />
+                            Female
+                        </label>
+                        <label className="gender-label">
+                            <input type="radio" value="Male and Female" checked={gender === 'Male and Female'} onChange={() => setGender('Male and Female')} />
+                            Both Male and Female
+                        </label>
+                        <label className="gender-label">
+                            <input type="radio" value="Other" checked={gender === 'Other'} onChange={() => setGender('Other')} />
+                            Other
+                        </label>
+                    </div>
+                </div>
+
+                <div className="location-interest-wrapper">
+                    <div className="location-wrapper">
+                        <label className="gender-label">Location:</label>
+                        <input className="location-input" type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Los Angeles" />
+                    </div>
+                    <div className="interest-wrapper">
+                        <label className="interest-label">Interest:</label>
+                        <input className="interest-input" type="text" value={interest} onChange={(e) => setInterest(e.target.value)} placeholder="real estate" />
+                    </div>
+                </div>
+            </div>
+
             <button onClick={handleGeneratePost} className="generate-button action-button" disabled={loading}>
                 {loading ? 'Generating...' : buttonText}
             </button>

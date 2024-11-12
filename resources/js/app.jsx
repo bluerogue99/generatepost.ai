@@ -16,7 +16,8 @@ import { loadStripe } from '@stripe/stripe-js';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 // Get the Stripe public key from the .env file
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
+
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

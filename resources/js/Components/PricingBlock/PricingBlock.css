@@ -62,7 +62,7 @@
     font-weight: 700;
     color: white;
     margin-top: 12px;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
   
   .feature-list {
@@ -100,7 +100,42 @@
   .cta-button:hover {
     background-color: #e04000;
   }
-  
+
+  .price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: normal;
+    font-weight: 700;
+    margin-top: 0em;
+    margin-bottom:0.5em;
+    background: linear-gradient(to right, #ff7f50, #ff4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .black-friday-sale {
+    align-items:center;
+    margin:auto;
+    justify-content:center;
+
+  }
+  .original-price {
+    text-decoration: line-through;
+    text-decoration-color: red; /* Adds a red line through the text */
+    color: #888;
+    font-size: 1rem;
+  }
+  .discount-price {
+    margin-left:10px;
+  }
+  .discount-reason-notice {
+    color:white;
+  }
+  .discount-icon {
+    width:30px;
+    height:auto;
+  }
 
   @media only screen and (max-width:768px) {
     .pricing-blocks {

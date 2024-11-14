@@ -207,7 +207,7 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                 resolution = 'default resolution'; 
         }
 
-        // Generate the image prompt
+        // Generate prompts
         const generateImagePrompt = `Generate a ${selectedPlatform} image on the topic of "${imagePrompt}" with ${resolution}, using ${getArticle(toneOfVoice)} ${toneOfVoice} tone.`;
         const post = `Generate a ${selectedPlatform} post on the topic "${postTopic}" with ${getArticle(toneOfVoice)} ${toneOfVoice} tone.`;
         const prompt = post.replace("Your prompt is: ", "").trim();
@@ -368,13 +368,14 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                     />
                 )}
 
+
                 {isPostGenerated && isImageGenerated && (
-                <div className="task-button-group">
+                <div id="copy-buttons" className="task-button-group">
                     <button onClick={copyContentToClipboard} className="task-button copy-content-button">
                         <FaClipboard />
                         <span>Copy Content</span>
                     </button>
-                    <button onClick={copyHeadlineToClipboard} className="task-button copy-title-button">
+                    <button onClick={copyHeadlineToClipboard} className="task-button copy-title-button" >
                         <FaClipboard />
                         <span>Copy Title</span>
                     </button>

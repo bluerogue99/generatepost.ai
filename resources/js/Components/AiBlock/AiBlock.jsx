@@ -5,7 +5,7 @@ import AiForm from '../AiForm/AiForm';
 
 const descriptions = {
     Facebook: "Create engaging and shareable posts for Facebook that resonate with your audience, incorporating images, links, and text to enhance interaction and visibility.",
-    Instagram: "Craft catchy and creative captions for your Instagram photos that grab attention and encourage engagement, while also including relevant hashtags.",
+    Instagram: "Craft catchy and creative captions for your Instagram photos that grab attention and encourage engagement.",
     Threads: "Generate thoughtful and concise posts for Threads, focusing on sparking conversation and fostering community around trending topics.",
     TikTok: "Write fun and impactful captions for your TikTok posts that complement your visuals and inspire viewers to engage with your content.",
     X: "Quickly generate witty and concise tweets that fit Twitter's character limit, helping you stay relevant and connected with your audience.",

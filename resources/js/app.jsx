@@ -1,4 +1,4 @@
-// app.jsx
+
 import '../css/app.css';
 import './bootstrap';
 import '@fontsource/roboto/300.css';

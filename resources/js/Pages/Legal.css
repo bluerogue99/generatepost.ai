@@ -1,0 +1,63 @@
+.legal-container {
+    background-color: #0D0D0D;
+    color: #E0E0E0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.legal-container h1,
+.legal-container h2 {
+    color: #FFFFFF;
+}
+
+.legal-container a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.legal-container a:hover {
+    text-decoration: underline;
+}
+
+.legal-container p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.legal-container .contact-info {
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.legal-container .contact-info h3 {
+    color: #FFFFFF;
+}
+
+.legal-container .contact-info p {
+    color: #B0B0B0;
+}
+
+
+.legal-container h1 {
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    color: #FFFFFF;  
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #FFFFFF; 
+    font-family: Inter, sans-serif;
+    font-size: 3.2rem;
+    line-height: normal;
+    font-weight: 700;
+    color: white;
+}
+
+@media only screen and (max-width:768px) {
+.legal-container h1 {
+    font-size:2rem;
+}
+}

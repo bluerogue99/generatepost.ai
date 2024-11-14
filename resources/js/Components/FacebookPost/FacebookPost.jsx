@@ -78,7 +78,7 @@ const FacebookPost = ({ postContent, generatedImageUrl, generatedHeadline }) => 
                         <span className="action-text">Share</span>
                     </span>
                     <span className="action-button">
-                        <img src="/assets/facebook-comment-profile.svg" className="facebook-comment-profile" alt="Facebook Comment Profile"/>
+                        <img src="/assets/facebook_profile_picture.svg" className="facebook-comment-profile" alt="Facebook Comment Profile"/>
                         <img src="/assets/facebook-chevron-icon.svg" className="facebook-chevron-icon" alt="Facebook Chevron Icon"/>
                     </span>
                 </div>

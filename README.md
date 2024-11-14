@@ -1,6 +1,6 @@
-## generatepost.ai
+## postgenerator.io
 
-GeneratePost.ai is a SaaS built with Laravel backend and React JavaScript frontend. It includes a freemium model and a premium logged in authenticated layout.
+postgenerator.io is a SaaS built with Laravel backend and React frontend. It includes a freemium model and a premium logged in authenticated layout. Users can create social media posts via the application. 
 
 Freemium layout: 
     - AI Text generator based on entered topic which is converted into text prompt (Completed)

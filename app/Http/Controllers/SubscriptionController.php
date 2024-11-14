@@ -36,7 +36,7 @@ class SubscriptionController extends Controller
                         'price_data' => [
                             'currency' => 'usd',
                             'product_data' => [
-                                'name' => 'GeneratePost.ai Pro',
+                                'name' => 'PostGenerator.io Premium',
                             ],
                             'recurring' => [
                                 'interval' => 'month',

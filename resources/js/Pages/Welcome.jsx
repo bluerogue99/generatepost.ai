@@ -9,6 +9,7 @@ import FeaturesBlock from '@/Components/FeaturesBlock/FeaturesBlock';
 import TargetedBlock from '@/Components/TargetedBlock/TargetedBlock';
 import Footer from '@/Components/Footer/Footer';
 import PricingBlock from '@/Components/PricingBlock/PricingBlock';
+import GDPRCompliance from '@/Components/GDPRCompliance/GDPRCompliance';
 
 const Welcome = () => {
 
@@ -29,6 +30,7 @@ const Welcome = () => {
             <FeaturesBlock />
             <TargetedBlock/>
             <PricingBlock />
+            <GDPRCompliance />
             <Footer/>
         </div>
     );

@@ -1,0 +1,29 @@
+.faq-page {
+    padding: 2em;
+    margin: 0 auto;
+    background-color: #0D0D0D;  /* Dark background */
+    color: #F1F1F1;  /* Light text for contrast */
+    min-height: 100vh;
+}
+
+.faq-page h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #FFFFFF;  
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #FFFFFF; 
+    font-family: Inter, sans-serif;
+    font-size: 3.2rem;
+    line-height: normal;
+    font-weight: 700;
+    color: white;
+}
+
+@media only screen and (max-width:768px) {
+    .faq-page h1 {
+        font-size: 2rem;
+    }
+}

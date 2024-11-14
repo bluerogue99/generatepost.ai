@@ -25,7 +25,7 @@ class HeadlineGeneratorController extends Controller
         ])->post('https://api.openai.com/v1/chat/completions', [
             'model' => 'gpt-4', // You can change this back to 'gpt-3.5-turbo' if preferred
             'messages' => [
-                ['role' => 'system', 'content' => "You are a helpful assistant."],
+                ['role' => 'system', 'content' => "You are a Social Media Post Generator."],
                 ['role' => 'user', 'content' => $request->input('prompt')],
             ],
             'max_tokens' => 60, // Adjust as needed for headlines

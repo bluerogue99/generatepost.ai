@@ -196,3 +196,19 @@
   font-size: 14px;
   margin-bottom:10px;
 }
+
+@media only screen and (max-width:768px) {
+  .tiktok-name {
+    font-size:12px;
+  }
+  .tiktok-post-headline {
+    font-size:14px;
+  }
+  .tiktok-post-content {
+    font-size:12px;
+  }
+  .nav-item img {
+    width:22px; 
+    height:22px;
+  }
+}

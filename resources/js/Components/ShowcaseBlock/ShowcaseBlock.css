@@ -183,7 +183,7 @@
     padding:2em;
   }
   .carousel-container {
-    width:100%;
+    width:70%;
   }
 
   .description-container {
@@ -197,4 +197,12 @@
   .showcase-button {
     width: 100%;
   }
+  .slick-dots {
+    bottom:0;
+    margin-bottom:-30px;
+  }
+  .slick-prev, .slick-next {
+    height:auto;
+  }
+
 }

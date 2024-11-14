@@ -136,3 +136,21 @@
   font-weight: 600;
   font-size: 18px;
 }
+
+@media only screen and (max-width:768px) {
+  .x-post p {
+    font-size:12px;
+  }
+  .x-post-title {
+    font-size:14px;
+  }
+  .x-profile-name, .x-username {
+    font-size:12px;
+  }
+  .x-post-data {
+    font-size:12px;
+  }
+  .x-share {
+    font-size:12px;
+  }
+}

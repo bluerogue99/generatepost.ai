@@ -29,10 +29,18 @@ const HeroBlock = () => {
                 <p className="hero-text">Experience the power of AI to create engaging posts effortlessly. Our AI-driven tool crafts high-quality, unique content for your social media, blogs, and more—in seconds. Perfect for marketers, influencers, and businesses alike.</p>
                 <button className="hero-button" onClick={scrollToGenerator}>Try for Free!</button>
                 <div className="social-icons">
+                <a href="https://www.facebook.com/people/PostGeneratorio/61568373193221/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faFacebookF} className="social-icon" />
+                </a>
+                <a href="https://x.com/simcojozsef" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faTwitter} className="social-icon" />
+                </a>
+                <a href="https://www.instagram.com/postgeneratorio/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faInstagram} className="social-icon" />
+                </a>
+                <a href="https://www.linkedin.com/company/postgenerator-io/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedinIn} className="social-icon" />
+                </a>
                 </div>
             </div>
             <div className="hero-image">

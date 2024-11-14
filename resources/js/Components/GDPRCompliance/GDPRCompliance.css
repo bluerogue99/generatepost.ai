@@ -1,0 +1,140 @@
+/* Global styles */
+html {
+    background-color: #0D0D0D;
+    min-height: 100%;
+  }
+  
+  body {
+    background-color: #0D0D0D;
+    margin: 0;
+    min-height: 100vh;
+    color: #ffffff;
+  }
+  
+  /* GDPR Popup styles */
+  .gdpr-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0D0D0D;
+    border-top: 1px solid #1a1a1a;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    z-index: 50;
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .gdpr-container {
+    width:100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .gdpr-content {
+    flex: 1;
+  }
+  
+  .gdpr-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #f3f4f6;
+  }
+  
+  .gdpr-text {
+    font-size: 0.875rem;
+    color: #9ca3af;
+  }
+  
+  .gdpr-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .gdpr-button {
+    min-width: 100px;
+    padding: 8px 28px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .decline-button {
+    background: transparent;
+    border: 1px solid #4b5563;
+    color: #9ca3af;
+  }
+  
+  .decline-button:hover {
+    background: linear-gradient(to right, #ff7f50, #ff4500);
+    border-color: transparent;
+    color: white;
+  }
+  
+  .accept-button {
+    position: relative;
+    background: linear-gradient(to right, #ff7f50, #ff4500);
+    color: white;
+    border: none;
+    overflow: hidden;
+    transform: scale(1);
+  }
+  
+  .accept-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .gdpr-close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: #9ca3af;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: none;
+  }
+  
+  .gdpr-close-button:hover {
+    color: #f3f4f6;
+  }
+
+  .privacy-policy-link {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .privacy-policy-link:hover {
+    opacity: 0.8;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 640px) {
+    .gdpr-container {
+      flex-direction: row;
+    }
+  }
+  
+  @media (max-width: 639px) {
+    .gdpr-close-button {
+      display: block;
+    }
+  }

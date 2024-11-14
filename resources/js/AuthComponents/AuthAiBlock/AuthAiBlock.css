@@ -119,7 +119,6 @@
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
-    margin: 1rem auto;
     pointer-events: none;
 }
 
@@ -145,21 +144,22 @@
 }
 .unlock-title {
     font-family: Inter, sans-serif;
-    font-size: 3.2rem;
+    font-size: 2rem;
     text-align: center;
     line-height: normal;
     font-weight: 700;
     color: black;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 10px;
 }
 
 .unlock-description {
     max-width: 800px;
     margin: auto;
     font-family: Inter, sans-serif;
-    font-size: 1.2em;
     margin-bottom: 20px;
     color: black;
+    font-size: 1rem;
 }
 .get-premium-button {
     position: relative;
@@ -170,20 +170,21 @@
     overflow: hidden;
     transition: all 0.3s ease;
     transform: scale(1);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
     margin-top: 18px;
     z-index:99;
+    cursor: pointer;
+    pointer-events: auto;
 }
 .unlock-section-wrapper {
-    color:black;
-    z-index:98;
-    position:absolute;
-}
-.get-premium-button {
-    position: relative;
-    z-index: 2; 
-    pointer-events: auto; 
-    font-size: 1.4em;
+    color: black;
+    z-index: 98;
+    position: absolute;
+    left: 50%;              /* Move the element to the center */
+    transform: translateX(-50%); /* Offset by 50% of its width to truly center */
 }
 
+@media only screen and (max-width:768px) {
+    .unlock-list-wrapper {
+        font-size:14px;
+    }
+}

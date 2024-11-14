@@ -129,6 +129,9 @@ select:focus {
     margin-right:10px;
 }
 
+.task-button-group-display {
+    display:none;
+}
 
 @media only screen and (max-width: 900px) {
     .task-button {
@@ -147,3 +150,12 @@ select:focus {
     }
 }
 
+@media only screen and (max-width:768px) {
+    .Toastify {
+        z-index:99;
+    }
+    .Toastify__toast-container .Toastify__toast-container--top-right {
+        z-index:999;
+        margin-top:80px;
+    }
+}

@@ -4,6 +4,7 @@ import './NavigationMenu.css';
 
 const NavigationMenu = ( {onMenuClick} ) => {
     const [isScrolled, setIsScrolled] = useState(false); 
+    const [extraPadding, setExtraPadding] = useState('0px');
 
     const handleMenuItemClick = (platform) => {
         onMenuClick(platform);  
@@ -26,8 +27,10 @@ const NavigationMenu = ( {onMenuClick} ) => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setIsScrolled(true); // Set to true when scrolled down
+                setExtraPadding('160px');
             } else {
                 setIsScrolled(false); // Set to false when at the top
+                setExtraPadding('0px');
             }
         };
 
@@ -38,6 +41,20 @@ const NavigationMenu = ( {onMenuClick} ) => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+
+    const handleMenuClick = (event, targetId) => {
+        event.preventDefault();
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            const offset = 80; // Adjust this value as needed to match your menu height
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: elementPosition - offset,
+                behavior: 'smooth',
+            });
+        }
+    };
 
 
     return (
@@ -93,20 +110,22 @@ const NavigationMenu = ( {onMenuClick} ) => {
                         )}
                     </li>
 
+                    
+                    
                     <li className="navigation-item">
-                        <a href="#showcase" className="navigation-link">Showcase</a>
+                        <a href="#showcase" className="navigation-link" onClick={(e) => handleMenuClick(e, 'showcase')}>Showcase</a>
                     </li>
                     <li className="navigation-item">
-                        <a href="#testimonials" className="navigation-link">Testimonials</a>
+                        <a href="#testimonials" className="navigation-link" onClick={(e) => handleMenuClick(e, 'testimonials')}>Testimonials</a>
                     </li>
                     <li className="navigation-item">
-                        <a href="#features" className="navigation-link">Features</a>
+                        <a href="#features" className="navigation-link" onClick={(e) => handleMenuClick(e, 'features')}>Features</a>
                     </li>
                     <li className="navigation-item">
-                        <a href="#audience" className="navigation-link">Audience</a>
+                        <a href="#audience" className="navigation-link" onClick={(e) => handleMenuClick(e, 'audience')}>Audience</a>
                     </li>
                     <li className="navigation-item">
-                        <a href="#pricing" className="navigation-link">Pricing</a>
+                        <a href="#pricing" className="navigation-link" onClick={(e) => handleMenuClick(e, 'pricing')}>Pricing</a>
                     </li>
                     <li className="navigation-item">
                         <a href="/login" className="navigation-link login-button">Login</a>

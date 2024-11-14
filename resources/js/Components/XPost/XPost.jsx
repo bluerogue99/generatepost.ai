@@ -48,7 +48,7 @@ const XPost = ( {postContent, generatedImageUrl, generatedHeadline} ) => {
       <div className="x-share">
         <div className="x-comment">
           <img className="x-comment-icon" src="/assets/x_comment_icon.svg" alt="Comment" />
-          <span className="x-comment-count">991</span>
+          <span className="x-comment-count">353</span>
         </div>
         
         <div className="x-share">
@@ -61,7 +61,7 @@ const XPost = ( {postContent, generatedImageUrl, generatedHeadline} ) => {
 
         <div className="x-heart">
           <img className="x-heart-icon" src="/assets/x_heart_icon.svg" alt="Heart" />
-          <span className="x-heart-count">9,867</span>
+          <span className="x-heart-count">896</span>
         </div>
 
         <div className="x-mark">

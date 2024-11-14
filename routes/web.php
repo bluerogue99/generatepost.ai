@@ -57,8 +57,24 @@ Route::middleware('auth')->prefix('facebook')->group(function () {
     Route::get('/{id}', [IntegrationController::class, 'showFacebook']);
     Route::put('/{id}', [IntegrationController::class, 'updateFacebook']);
     Route::delete('/{id}', [IntegrationController::class, 'destroyFacebook']);
-
     Route::post('/facebook/callback', [IntegrationController::class, 'handleFacebookCallback']);
+});
+
+
+/*FAQ*/
+Route::get('/faq', function () {
+    return Inertia::render('FAQ');
+});
+
+/*Legal*/
+Route::get('/privacy-policy', function () {
+    return Inertia::render('PrivacyPolicy');
+});
+Route::get('/cookie-policy', function () {
+    return Inertia::render('CookiePolicy');
+});
+Route::get('/terms-and-conditions', function () {
+    return Inertia::render('TermsAndConditions');
 });
 
 
@@ -75,7 +91,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/api/posts/{id}', [PostController::class, 'destroy']);
     Route::put('/api/posts/{id}', [PostController::class, 'update']);
 });
-
 
 
 /*Public Layout Routes*/

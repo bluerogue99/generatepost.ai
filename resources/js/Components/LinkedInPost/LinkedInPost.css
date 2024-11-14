@@ -126,3 +126,18 @@
   .linkedin-post-text {
     text-align:left;
   }
+
+  @media only screen and (max-width:768px) {
+    .linkedin-post-text {
+      font-size:12px;
+    }
+    .linkedin-brand {
+      font-size:14px;
+    }
+    .linkedin-post-title {
+      font-size:14px;
+    }
+    .linkedin-social,.linkedin-interact {
+      font-size:12px;
+    }
+  }

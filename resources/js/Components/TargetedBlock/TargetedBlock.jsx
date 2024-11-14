@@ -18,8 +18,8 @@ const TargetedBlock = () => {
 
   return (
     <div className="targeted-container" id="audience">
-      <h2 className="targeted-title">Who is generatepost.ai for?</h2>
-      <p className="targeted-description">GeneratePost.ai empowers anyone looking to <span className="highlighted-targeted-description">create impactful social media content</span>, from content creators and agencies to small business owners and event planners. 
+      <h2 className="targeted-title">Who is postgenerator.io for?</h2>
+      <p className="targeted-description">PostGenerator.io empowers anyone looking to <span className="highlighted-targeted-description">create impactful social media content</span>, from content creators and agencies to small business owners and event planners. 
       Effortlessly <span className="highlighted-targeted-description">scale campaigns, engage audiences, and boost your brand’s presence</span> with AI-driven posts tailored to your needs.</p>
       <div className="cards-container">
         {cards.map((card, index) => (

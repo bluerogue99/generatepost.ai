@@ -40,18 +40,6 @@ const Footer = () => {
             </a>
         </p>
         </div>
-
-        {/* Tools Column */}
-        <div>
-          <h3 className="footer-title">Tools</h3>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
-            <li><a href="/facebook-post-generator" style={{ color: '#fff', textDecoration: 'none' }}>Facebook Post Generator</a></li>
-            <li><a href="/instagram-post-generator" style={{ color: '#fff', textDecoration: 'none' }}>Instagram Post Generator</a></li>
-            <li><a href="/tiktok-post-generator" style={{ color: '#fff', textDecoration: 'none' }}>TikTok Post Generator</a></li>
-            <li><a href="/x-post-generator" style={{ color: '#fff', textDecoration: 'none' }}>X Post Generator</a></li>
-            <li><a href="/linkedin-post-generator" style={{ color: '#fff', textDecoration: 'none' }}>LinkedIn Post Generator</a></li>
-          </ul>
-        </div>
       </div>
     </footer>
   );

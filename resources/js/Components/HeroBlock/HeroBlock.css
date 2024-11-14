@@ -83,7 +83,7 @@
 }
 .hero-title-word {
     display: inline-block;
-    opacity: 0; /* Start hidden until animation begins */
+    opacity: 0; 
     animation: slideUpFadeIn 1s ease-out forwards;
 }
 

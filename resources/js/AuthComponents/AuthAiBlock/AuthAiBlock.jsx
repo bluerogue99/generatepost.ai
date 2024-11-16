@@ -44,23 +44,6 @@ const SocialMediaGenerator = () => {
         }
     }, [subscriptionStatus]);
 
-    const handleCheckout = async () => {
-        try {
-            const stripeKey = import.meta.env.VITE_STRIPE_KEY;
-            const response = await axios.post('/create-checkout-session');
-            const sessionId = response.data.id;
-        
-            const stripe = window.Stripe(stripeKey);
-            const { error } = await stripe.redirectToCheckout({ sessionId });
-        
-            if (error) {
-                console.error('Stripe Checkout error:', error);
-            }
-        } catch (error) {
-            console.error('Error creating checkout session:', error);
-        }
-    };
-    
 
     return (
         <div>
@@ -138,16 +121,19 @@ const SocialMediaGenerator = () => {
                     {descriptions[selectedPlatform]}
                 </div>
                 <AuthAiForm buttonText={buttonText} selectedPlatform={selectedPlatform} /> 
-
                 <div className="unlock-section-wrapper">
-                    <h2 className="unlock-title">Unlock Premium</h2>
+                    <h2 className="unlock-title">Subscribe to Unlock Premium</h2>
                     <p className="unlock-description">Unlock Premium Features and start generating posts like a PRO targeting Your audience.</p>
                     <ul className="unlock-list-wrapper">
                         <li className="unlock-list-item">Unlock Target Audience by Age, Gender, Location and Interest.</li>
                         <li className="unlock-list-item">Unlock Tone, Image and Text Premium Prompts.</li>
                         <li className="unlock-list-item">Unlock GPT 4.0 for Smartest Results.</li>
                     </ul>
-                    <button className="get-premium-button" onClick={handleCheckout}>Get Premium Now!</button>
+                    <a href="/subscriptions">
+                    <button className="get-premium-button">
+                        Get Premium Now!
+                    </button>
+                    </a>
                 </div>
             </div>
             </div>

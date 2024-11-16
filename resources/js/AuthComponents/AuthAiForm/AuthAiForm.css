@@ -205,5 +205,8 @@ select:focus {
     .premium-inner-container {
         display:none;
     }
+    .gender-label-wrapper {
+        flex-direction:column;
+    }
 }
 

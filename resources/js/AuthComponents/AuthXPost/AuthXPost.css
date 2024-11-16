@@ -137,3 +137,20 @@
     font-size: 18px;
   }
   
+  @media only screen and (max-width:768px) {
+    .x-profile-name {
+      font-size:14px;
+    }
+    .x-subscribe-button {
+      display:none;
+    }
+    .x-post-title {
+      font-size:14px;
+    }
+    .x-post {
+      font-size:12px;
+    }
+    .x-post-data {
+      font-size:12px;
+    }
+  }

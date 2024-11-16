@@ -10,13 +10,14 @@ export default function AuthenticatedLayout({ children }) {
     const { user } = usePage().props.auth || {}; 
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     const [subscriptionStatus, setSubscriptionStatus] = useState(null);
-
+    const [endsAt, setEndsAt] = useState(null);
 
     useEffect(() => {
         const fetchSubscriptionStatus = async () => {
             try {
                 const response = await axios.get('/subscription-status'); 
                 setSubscriptionStatus(response.data.subscription_status); 
+                setEndsAt(response.data.ends_at);
             } catch (error) {
                 console.error('Error fetching subscription status:', error);
             }
@@ -26,36 +27,6 @@ export default function AuthenticatedLayout({ children }) {
         }
     }, [subscriptionStatus]);
 
-    const handleCheckout = async () => {
-        try {
-            const stripeKey = import.meta.env.VITE_STRIPE_KEY;
-            const response = await axios.post('/create-checkout-session');
-            const sessionId = response.data.id;
-        
-            const stripe = window.Stripe(stripeKey);
-            const { error } = await stripe.redirectToCheckout({ sessionId });
-        
-            if (error) {
-                console.error('Stripe Checkout error:', error);
-            }
-        } catch (error) {
-            console.error('Error creating checkout session:', error);
-        }
-    };
-
-    const handleCancelSubscription = async () => {
-        try {
-            const response = await axios.post('/cancel-subscription');
-            if (response.data.success) {
-                alert('Subscription cancelled');
-            } else {
-                alert('No active subscription found');
-            }
-        } catch (error) {
-            console.error('Error cancelling subscription:', error.response?.data || error.message);
-            alert('An error occurred while cancelling the subscription. Please try again later.');
-        }
-    };
 
         
     return (
@@ -91,19 +62,36 @@ export default function AuthenticatedLayout({ children }) {
                             {/* Subscription */}
                             <div className="subscription-wrapper">
                                 <span className="subscription-status">
-                                    Subscription status: {subscriptionStatus === 'active' ? 'Subscribed' : 'Unsubscribed'}
+                                    Subscription status: {subscriptionStatus === 'active' ? 'Active' : 'Unsubscribed'}
                                 </span>
 
+                                {subscriptionStatus === 'active' && endsAt ? (
+                                    <>
+                                        <p className="ends-at">, ends at {endsAt}.</p>
+                                        <style>
+                                            {`
+                                                .subscription-link {
+                                                    display: none;
+                                                }
+                                            `}
+                                        </style>
+                                    </>
+                                ) : null}
+
                                 {subscriptionStatus === 'active' ? (
-                                    <button className="subscription-link" onClick={handleCancelSubscription}>
-                                        Cancel Premium
-                                    </button>
+                                    <a href="/subscriptions/cancel" className="subscription-link">
+                                        <button>
+                                            Cancel Premium
+                                        </button>
+                                    </a>
                                 ) : (
-                                    <button className="subscription-link" onClick={handleCheckout}>
-                                        Get Premium
-                                    </button>
+                                    <a href="/subscriptions" className="subscription-link">
+                                        <button>
+                                            Get Premium
+                                        </button>
+                                    </a>
                                 )}
-                            </div>
+                        </div>
                             <div className="relative ms-3">
                                 <Dropdown>
                                     <Dropdown.Trigger>

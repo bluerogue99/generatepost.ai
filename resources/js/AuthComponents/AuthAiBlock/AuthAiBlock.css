@@ -80,6 +80,8 @@
     position:absolute; 
     right:0; 
     top:0; 
+    padding-right:20px;
+    padding-top:20px;
 }
 
 .premium-tag {
@@ -182,6 +184,7 @@
     left: 50%;              /* Move the element to the center */
     transform: translateX(-50%); /* Offset by 50% of its width to truly center */
 }
+
 
 @media only screen and (max-width:768px) {
     .unlock-list-wrapper {

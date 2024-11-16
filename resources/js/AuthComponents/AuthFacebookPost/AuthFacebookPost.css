@@ -232,4 +232,50 @@
     color: #999;
 }
 
-
+@media only screen and (max-width:768px) {
+    .facebook-headline {
+        font-size:14px;
+    }
+    .facebook-post-cta-container {
+        flex-direction:column;   
+    }
+    .facebook-cta-button {
+        width:100%;
+        margin-top:10px;
+        font-size:12px;
+    }
+    .facebook-website-name {
+        font-size:12px;
+    }
+    .received-from-ai {
+        font-size:12px;
+    }
+    .post-reactions {
+        font-size:12px;
+    }
+    .heart-icon{
+        width:22px;
+    }
+    .like-icon {
+        width:22px;
+    }
+    .facebook-heart-count {
+        align-items:center; 
+        padding-left:3px;
+    }
+    .facebook-comment, .facebook-share {
+        font-size:12px;
+    }
+    .profile-name {
+        font-size:14px;
+    }
+    .sponsored {
+        font-size:12px;
+    }
+    .post-actions {
+        font-size:12px;
+    }
+    .facebook-footer-icon {
+        width:18px;
+    }
+}

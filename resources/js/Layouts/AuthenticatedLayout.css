@@ -21,7 +21,10 @@
 .subscription-status {
     color:white;
 }
-
+.ends-at {
+    margin-left:-8px;
+    color: white;
+}
 @media only screen and (max-width:1200px) {
     .subscription-status {
         display:none;

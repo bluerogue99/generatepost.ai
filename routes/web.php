@@ -10,11 +10,12 @@ use App\Http\Controllers\IntegrationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PostGeneratorController;
 use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -32,15 +33,86 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+
 Route::get('/subscription', [SubscriptionController::class, 'index'])->name('subscription');
 Route::post('/create-checkout-session', [SubscriptionController::class, 'createCheckoutSession']);
 
-// Stripe
+//  For Layout Changes only
 Route::get('/subscription/success', [SubscriptionController::class, 'success'])->name('subscription.success');
 Route::get('/subscription/cancel', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');
+
 Route::middleware('auth:sanctum')->get('/subscription-status', [SubscriptionController::class, 'getSubscriptionStatus']);
 Route::post('/cancel-subscription', [SubscriptionController::class, 'cancelledbyuser']);
 Route::post('/stripe-webhook', [SubscriptionController::class, 'webhook']);
+
+
+
+
+
+
+
+
+Route::get('/checkout', function () {
+    return Inertia::render('Checkout');
+});
+
+
+Route::get('subscriptions', function(Request $request) {
+    $user = $request->user();
+    $intent = $user->createSetupIntent();
+    return view ('subscriptions', compact('intent'));
+});
+
+
+Route::post('subscriptions/create', function(Request $request) {
+
+    $request->user()->newSubscription(
+        'default', 'price_1QLPvQRtESZgc9O9QPpFSd12'
+    )->create($request->payment_method);
+    return Inertia::render('SubscriptionSuccess');
+})->name('subscriptions.create');
+
+// Cancel with Grace period of 30 days
+Route::get('subscriptions/cancel', function(Request $request) {
+    $user = $request->user();
+    $activeDefaultSubscription = $user->subscription('default'); 
+    $activeDefaultSubscription->cancel();
+    return Inertia::render('SubscriptionCancel');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

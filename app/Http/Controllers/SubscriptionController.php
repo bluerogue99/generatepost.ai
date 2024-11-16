@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Log;
 use App\Models\User;
 use Inertia\Inertia;
 
+
 class SubscriptionController extends Controller
 {
     public function createCheckoutSession(Request $request)
@@ -19,16 +20,8 @@ class SubscriptionController extends Controller
         try {
             Stripe::setApiKey(env('STRIPE_SECRET'));
             $user = $request->user();
-            /*
-            if (!$user->stripe_customer_id) {
-                $stripeCustomer = \Stripe\Customer::create([
-                    'email' => $user->email,
-                ]);
-                $user->stripe_customer_id = $stripeCustomer->id;
-                $user->save();
-            }
-            */
-            // Create checkout session
+            
+
             $checkoutSession = Session::create([
                 'payment_method_types' => ['card'],
                 'line_items' => [
@@ -47,7 +40,7 @@ class SubscriptionController extends Controller
                     ],
                 ],
                 'mode' => 'subscription',
-                /*'customer' => $user->stripe_customer_id,*/
+                'customer' => $user->stripe_customer_id,
                 'success_url' => route('subscription.success'),
                 'cancel_url' => route('subscription.cancel'),
             ]);
@@ -79,7 +72,7 @@ class SubscriptionController extends Controller
         return redirect()->route('generate'); 
     }
 
-    /*
+
     public function webhook(Request $request)
     {
     $payload = $request->getContent();
@@ -110,14 +103,30 @@ class SubscriptionController extends Controller
         return response('Webhook Error', 400);
     }
     }
-    */
+
 
     public function getSubscriptionStatus(Request $request)
     {
         $user = $request->user();
+        $subscription = $user->subscription('default'); // Retrieve the subscription for the 'default' plan
+        
+        $stripeStatus = $subscription ? $subscription->stripe_status : null;
+        $endDate = $this->getSubscriptionEndDate($subscription); // Get the end date from the subscription
+
         return response()->json([
-            'subscription_status' => $user->subscription_status,
+            'subscription_status' => $stripeStatus,
+            'ends_at' => $endDate, // Send the 'ends_at' date in the response
         ]);
+    }
+
+    private function getSubscriptionEndDate($subscription)
+    {
+        // Check if subscription exists and has an end date
+        if ($subscription && $subscription->ends_at) {
+            return $subscription->ends_at->toDateString(); // Format as 'YYYY-MM-DD' (adjust as needed)
+        }
+
+        return null; // Return null if there is no end date
     }
 
 

@@ -27,7 +27,14 @@
     font-size: 16px;
 }
 
+.dash-image-notice {
+    padding-top:0.5em; 
+    padding-bottom:0.5em;
+    padding-left:3em;
+    padding-right:3em;
+    background:#e5e7eb;
 
+}
 
 /*Deletion modal*/
 

@@ -106,7 +106,11 @@ export default function Dashboard(props) {
     return (
         <AuthenticatedLayout>
             <Head title="Dashboard" />
-    
+            <div className="dash-image-notice">
+            <p className="text-sm text-gray-600">
+            <strong>Please note:</strong> Every image is available for 1 hour after it has been created. To download an image, please click on the image below. It will open in a new tab, where by right-clicking on the image you can download it.
+            </p>
+            </div>
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
@@ -140,11 +144,13 @@ export default function Dashboard(props) {
                                                     <td className="px-2 py-4 whitespace-nowrap text-sm">{limitWords(post.post_content, 4)}</td>
                                                     <td className="px-2 py-4 whitespace-nowrap text-sm">
                                                         {post.post_image_url ? (
+                                                            <a href={post.post_image_url} target="_blank" rel="noopener noreferrer">
                                                             <img
                                                                 src={post.post_image_url}
                                                                 alt="Post thumbnail"
                                                                 className="h-16 w-16 object-cover"
                                                             />
+                                                            </a>
                                                         ) : (
                                                             'N/A'
                                                         )}

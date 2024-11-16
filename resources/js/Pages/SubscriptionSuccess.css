@@ -1,0 +1,5 @@
+.highlighted-link {
+    color:#ff4500;
+    text-decoration:underline;
+    text-underline-offset:4px;
+}

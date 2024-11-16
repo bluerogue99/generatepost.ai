@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log; // Log for debugging
 
 class ImageGeneratorController extends Controller
 {
@@ -22,14 +21,14 @@ class ImageGeneratorController extends Controller
         try {
             // Call the OpenAI API to generate an image
             $response = Http::withHeaders([
-                'Authorization' => 'Bearer ' . $apiKey, // Bearer token from API key
+                'Authorization' => 'Bearer ' . $apiKey, 
                 'Content-Type' => 'application/json',
             ])->post('https://api.openai.com/v1/images/generations', [
-                'model' => 'dall-e-3',  // Specify the DALL-E model
-                'prompt' => $request->input('prompt'),  // User prompt
-                'n' => 1,  // Number of images
-                'size' => '1024x1024',  // Image size
-                'response_format' => 'url',  // Response format (url for image links)
+                'model' => 'dall-e-3', 
+                'prompt' => $request->input('prompt'), 
+                'n' => 1,  
+                'size' => '1024x1024',  
+                'response_format' => 'url',  
             ]);
 
             // Check if the response was successful
@@ -42,16 +41,10 @@ class ImageGeneratorController extends Controller
                     'image_url' => $imageUrl,
                 ]);
             } else {
-                // Log error details for debugging
-                Log::error('Failed to generate image', ['response' => $response->body()]);
-
                 // Return a failed response
                 return response()->json(['error' => 'Failed to generate image.'], $response->status());
             }
         } catch (\Exception $e) {
-            // Log exception for debugging
-            Log::error('Error generating image', ['exception' => $e->getMessage()]);
-
             // Return an error response
             return response()->json(['error' => 'An error occurred while generating the image.'], 500);
         }

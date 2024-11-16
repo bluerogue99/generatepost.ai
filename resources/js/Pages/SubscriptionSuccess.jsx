@@ -11,7 +11,7 @@ export default function SubscriptionSuccess() {
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
                             <h2 className="text-2xl font-semibold">Subscription Successful!</h2>
-                            <p>Your subscription has been created successfully. Thank you for subscribing! Navigate to Generate tab to start using Premium features.</p>
+                            <p>Your subscription has been created successfully. Thank you for subscribing! Start using Premium features by clicking <a class="highlighted-link" href="/generate">here.</a></p>
                         </div>
                     </div>
                 </div>

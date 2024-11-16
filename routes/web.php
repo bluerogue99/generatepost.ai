@@ -35,36 +35,22 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/subscription', [SubscriptionController::class, 'index'])->name('subscription');
-Route::post('/create-checkout-session', [SubscriptionController::class, 'createCheckoutSession']);
-
-//  For Layout Changes only
-Route::get('/subscription/success', [SubscriptionController::class, 'success'])->name('subscription.success');
-Route::get('/subscription/cancel', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');
+// Route::post('/create-checkout-session', [SubscriptionController::class, 'createCheckoutSession']);
 
 Route::middleware('auth:sanctum')->get('/subscription-status', [SubscriptionController::class, 'getSubscriptionStatus']);
-Route::post('/cancel-subscription', [SubscriptionController::class, 'cancelledbyuser']);
-Route::post('/stripe-webhook', [SubscriptionController::class, 'webhook']);
+// Route::post('/cancel-subscription', [SubscriptionController::class, 'cancelledbyuser']);
+// Route::post('/stripe-webhook', [SubscriptionController::class, 'webhook']);
 
 
-
-
-
-
-
-
-Route::get('/checkout', function () {
-    return Inertia::render('Checkout');
-});
-
-
-Route::get('subscriptions', function(Request $request) {
+// Checkout page
+Route::get('/subscriptions', function(Request $request) {
     $user = $request->user();
     $intent = $user->createSetupIntent();
     return view ('subscriptions', compact('intent'));
 });
 
-
-Route::post('subscriptions/create', function(Request $request) {
+// Create a sub
+Route::post('/subscriptions/create', function(Request $request) {
 
     $request->user()->newSubscription(
         'default', 'price_1QLPvQRtESZgc9O9QPpFSd12'
@@ -73,45 +59,12 @@ Route::post('subscriptions/create', function(Request $request) {
 })->name('subscriptions.create');
 
 // Cancel with Grace period of 30 days
-Route::get('subscriptions/cancel', function(Request $request) {
+Route::get('/subscriptions/cancel', function(Request $request) {
     $user = $request->user();
     $activeDefaultSubscription = $user->subscription('default'); 
     $activeDefaultSubscription->cancel();
     return Inertia::render('SubscriptionCancel');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Route::middleware('auth')->group(function () {
@@ -122,7 +75,7 @@ Route::middleware('auth')->group(function () {
 });
 
 /*Facebook Group Function for Integration*/
-
+/*
 Route::middleware('auth')->prefix('facebook')->group(function () {
     Route::get('/', [IntegrationController::class, 'indexFacebook']);
     Route::post('/', [IntegrationController::class, 'storeFacebook']);
@@ -131,7 +84,7 @@ Route::middleware('auth')->prefix('facebook')->group(function () {
     Route::delete('/{id}', [IntegrationController::class, 'destroyFacebook']);
     Route::post('/facebook/callback', [IntegrationController::class, 'handleFacebookCallback']);
 });
-
+*/
 
 /*FAQ*/
 Route::get('/faq', function () {
@@ -148,8 +101,6 @@ Route::get('/cookie-policy', function () {
 Route::get('/terms-and-conditions', function () {
     return Inertia::render('TermsAndConditions');
 });
-
-
 
 /*Authenticated Layout Routes*/
 Route::middleware('auth')->group(function () {

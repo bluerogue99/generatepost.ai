@@ -132,6 +132,20 @@ select:focus {
 .task-button-group-display {
     display:none;
 }
+.register-now-paragraph {
+    max-width: 600px;
+    margin: auto;
+    padding-top: 40px;
+}
+.register-link {
+    color:#ff4500;
+    text-decoration:underline;
+    text-underline-offset:4px;
+    font-family: Inter, sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    margin-top:20px;
+}
 
 @media only screen and (max-width: 900px) {
     .task-button {

@@ -106,19 +106,19 @@ export default function Dashboard(props) {
     return (
         <AuthenticatedLayout>
             <Head title="Dashboard" />
-            <div className="dash-image-notice">
-            <p className="text-sm text-gray-600">
-            <strong>Please note:</strong> Every image is available for 1 hour after it has been created. To download an image, please click on the image below. It will open in a new tab, where by right-clicking on the image you can download it.
-            </p>
-            </div>
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
                         <div className="text-gray-900 dark:text-gray-100">
+                        <div className="dash-image-notice">
+                            <p className="text-sm text-gray-600">
+                            <strong>Please note:</strong> Every image is available for 1 hour after it has been created. To download an image, please click on the image below. It will open in a new tab, where by right-clicking on the image you can download it.
+                            </p>
+                        </div>
                             {loading && <p>Loading...</p>}
                             {errorMessage && <p className="text-red-500">{errorMessage}</p>}
                             {posts.length === 0 && !loading && (
-                                <p className="text-center text-gray-500">Your generated posts will show up here.</p>
+                                <p className="text-center text-gray-500 pt-[1em] pb-[1em]">Your generated posts will show up here. You will only see posts that you have generated.</p>
                             )}
                             {posts.length > 0 && (
                                 <div className="overflow-x-auto">

@@ -289,15 +289,15 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                 type="text"
                 placeholder="Digital Marketing, Social Media, Branding, Content Marketing"
                 value={postTopic}
-                onChange={(e) => setPostTopic(e.target.value)} // Correctly set postTopic
+                onChange={(e) => setPostTopic(e.target.value)}
                 className="post-topic-input"
             />
             <h2 className="form-label">Enter Image Prompt</h2>
             <input
                 type="text"
-                placeholder="Visualize an upcoming event with exciting graphics, a countdown, and highlights of key details like date and location."
+                placeholder="Visualize a high-quality placeholder image for an e-commerce website."
                 value={imagePrompt}
-                onChange={(e) => setImagePrompt(e.target.value)} // Correctly set imagePrompt
+                onChange={(e) => setImagePrompt(e.target.value)} 
                 className="post-topic-input"
             />
             <h2 className="form-label">Tone of Voice</h2>
@@ -385,6 +385,15 @@ const AiForm = ({ buttonText, selectedPlatform }) => {
                     </button>
                     <ToastContainer />
                 </div>  
+                )}
+
+                {isPostGenerated && isImageGenerated && (
+                    <p className="register-now-paragraph">
+                        Try premium features where you can set your audience's age, geographic location, interest, store and edit your social media posts. 
+                        <a href="/register" className="register-link">
+                            Register now
+                        </a>
+                    </p>
                 )}
             </div>
         </div>

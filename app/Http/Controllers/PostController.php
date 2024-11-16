@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post; 
-use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -30,18 +29,19 @@ class PostController extends Controller
         } catch (\Illuminate\Validation\ValidationException $e) {
             return response()->json(['message' => 'Validation Error', 'errors' => $e->errors()], 422);
         } catch (\Exception $e) {
-            Log::error('Error saving post: ' . $e->getMessage());
             return response()->json(['message' => 'Internal Server Error'], 500);
         }
     }
 
     // Get all posts
-    public function index()
+    
+    public function index(Request $request)
     {
-        $posts = Post::with('user')->get();
+        $user = request()->user();
+        $posts = Post::where('post_created_by', $user->id)->with('user')->get();
         return response()->json($posts, 200);
     }
-
+    
     // Get a single post
     public function show($id)
     {
@@ -76,7 +76,6 @@ class PostController extends Controller
         } catch (\Illuminate\Validation\ValidationException $e) {
             return response()->json(['message' => 'Validation Error', 'errors' => $e->errors()], 422);
         } catch (\Exception $e) {
-            Log::error('Error updating post: ' . $e->getMessage());
             return response()->json(['message' => 'Internal Server Error'], 500);
         }
     }
@@ -90,7 +89,6 @@ class PostController extends Controller
 
             return response()->json(['message' => 'Post deleted successfully'], 200);
         } catch (\Exception $e) {
-            Log::error('Error deleting post: ' . $e->getMessage());
             return response()->json(['message' => 'Internal Server Error'], 500);
         }
     }

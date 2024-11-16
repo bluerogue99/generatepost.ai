@@ -8,9 +8,7 @@ use Stripe\Stripe;
 use Stripe\Exception\ApiErrorException;
 use Stripe\Subscription;
 use Stripe\Webhook;
-use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use Inertia\Inertia;
 
 
 class SubscriptionController extends Controller
@@ -48,10 +46,8 @@ class SubscriptionController extends Controller
             return response()->json(['id' => $checkoutSession->id]);
 
         } catch (ApiErrorException $e) {
-            Log::error('Stripe API Error: ' . $e->getMessage());
             return response()->json(['error' => 'An error occurred while creating the checkout session.'], 500);
         } catch (\Exception $e) {
-            Log::error('General Error: ' . $e->getMessage());
             return response()->json(['error' => 'An unexpected error occurred.'], 500);
         }
     }
@@ -72,46 +68,13 @@ class SubscriptionController extends Controller
         return redirect()->route('generate'); 
     }
 
-
-    public function webhook(Request $request)
-    {
-    $payload = $request->getContent();
-    $sigHeader = $request->header('Stripe-Signature');
-    $endpointSecret = env('STRIPE_WEBHOOK_SECRET'); 
-
-    try {
-        $event = Webhook::constructEvent($payload, $sigHeader, $endpointSecret);
-
-        switch ($event->type) {
-            case 'invoice.payment_succeeded':
-            case 'invoice.payment_failed':
-                $subscription = $event->data->object;
-                $user = User::find($subscription->customer);
-
-                if (!$user->stripe_subscription_id) {
-                    $user->stripe_subscription_id = $subscription->id;
-                    $user->save();
-                }
-
-                $user->save();
-                break;
-        }
-
-        return response('Webhook received', 200);
-    } catch (\Exception $e) {
-        Log::error('Stripe Webhook Error: ' . $e->getMessage());
-        return response('Webhook Error', 400);
-    }
-    }
-
-
     public function getSubscriptionStatus(Request $request)
     {
         $user = $request->user();
-        $subscription = $user->subscription('default'); // Retrieve the subscription for the 'default' plan
+        $subscription = $user->subscription('default'); 
         
         $stripeStatus = $subscription ? $subscription->stripe_status : null;
-        $endDate = $this->getSubscriptionEndDate($subscription); // Get the end date from the subscription
+        $endDate = $this->getSubscriptionEndDate($subscription);
 
         return response()->json([
             'subscription_status' => $stripeStatus,
@@ -121,12 +84,10 @@ class SubscriptionController extends Controller
 
     private function getSubscriptionEndDate($subscription)
     {
-        // Check if subscription exists and has an end date
         if ($subscription && $subscription->ends_at) {
-            return $subscription->ends_at->toDateString(); // Format as 'YYYY-MM-DD' (adjust as needed)
+            return $subscription->ends_at->toDateString();
         }
-
-        return null; // Return null if there is no end date
+        return null; 
     }
 
 
@@ -150,8 +111,6 @@ class SubscriptionController extends Controller
 
         return response()->json(['success' => false, 'message' => 'No active subscription found']);
     } catch (\Exception $e) {
-        Log::error('Error during subscription cancellation: ' . $e->getMessage());
-        Log::info('Stripe Subscription ID: ' . $user->stripe_subscription_id);
         return response()->json(['error' => 'An error occurred while cancelling the subscription.'], 500);
     }
     }

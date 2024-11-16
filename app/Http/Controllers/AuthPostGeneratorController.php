@@ -25,7 +25,7 @@ class AuthPostGeneratorController extends Controller
         ])->post('https://api.openai.com/v1/chat/completions', [
             'model' => 'gpt-4', // You can change this back to 'gpt-3.5-turbo' if preferred
             'messages' => [
-                ['role' => 'system', 'content' => "You are a helpful assistant."],
+                ['role' => 'system', 'content' => "You are an AI assistant that helps users generate creative and high-quality social media posts with accompanying images. Focus on making content engaging and shareable."],
                 ['role' => 'user', 'content' => $request->input('prompt')],
             ],
             'max_tokens' => 300, // Adjust as needed
